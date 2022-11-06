@@ -1,9 +1,15 @@
+// Player state
+
 import { createSlice } from "@reduxjs/toolkit";
 
-// see notes on redux toolkit at end of file
-
 const initialState = {
-	name: ""
+	name: "",
+	lifetime_score: {
+		games_played: null,
+		games_won: null,
+		games_lost: null,
+	},
+	current_score: {},	
 }
 
 export const playerSlice = createSlice({
@@ -19,6 +25,7 @@ export const playerSlice = createSlice({
 // "Action creators are generated for each case of the reducer function"
 export const { setName } = playerSlice.actions
 
+// this .reducer becomes "playerReducer" in src/app/store.js
 export default playerSlice.reducer
 
 /*
