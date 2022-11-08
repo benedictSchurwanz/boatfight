@@ -1,10 +1,10 @@
-// Variables denoting settings for the game
+// Game settings 
 
-export const starting_fleet = {
+export const starting_fleet_lengths = {
 	"Carrier": 5,
 	"Battleship": 4,
 	"Cruiser": 3,
-	"Destoryer": 3,
-	"Patrol boat": 2,
+	"Submarine": 3,
+	"Destroyer": 2,
 }
-export const number_of_boats = starting_fleet.length;
+export const fleet_size = starting_fleet_lengths.length;
