@@ -3,10 +3,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+	
 }
 
 export const gameData = createSlice({
-	game_id: null,
+	name: 'game',
 	initialState,
 	reducers: {
 		setName: (state, action) => {
