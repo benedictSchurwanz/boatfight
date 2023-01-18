@@ -1,10 +1,10 @@
 import React from "react";
-// Look up: How to write React components
+import './index.css';
 
 function App() {
   return (
     <div>
-      <h1>Hi</h1>
+      <h1>BoatFight</h1>
     </div>
   );
 }
