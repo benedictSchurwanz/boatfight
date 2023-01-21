@@ -28,7 +28,7 @@ export const player = {
 	games_played: [],	
 	is_dead: (fleet) => {
 		// loop through fleet; is boat sunk? 
-		//First boat that is not sunk, function returns false. 
+		// First boat that is not sunk, function returns false. 
 		// Otherwise returns true.
 		for (let i = 0; i < fleet.length; i++) {
 			if (fleet[i].is_floating) {

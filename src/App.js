@@ -1,4 +1,7 @@
+// Dependencies
 import React from "react";
+
+// CSS
 import './index.css';
 
 function App() {
@@ -10,3 +13,8 @@ function App() {
 }
 
 export default App;
+
+/* Do Next:
+
+
+*/
