@@ -1,6 +1,5 @@
 // Dependencies
 import React from "react";
-import styled from "styled-components";
 
 // CSS
 import './index.css';
@@ -16,7 +15,7 @@ function App() {
   return (
     <Container>
       <Title>BoatFight</Title>
-      <BoardContainer>Hello.</BoardContainer>
+      <BoardContainer>BoardContainer component</BoardContainer>
     </Container>
   );
 }
@@ -28,6 +27,5 @@ export default App;
 - put it in App
 - have a look
 
-Title: 
-  - align: center
+
 */
