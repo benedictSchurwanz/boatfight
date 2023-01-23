@@ -21,8 +21,10 @@ export const BoardContainer = styled.div`
 	// border: 1px solid red;
 	
 	width: 60vw;
+	min-height: 60vw;
 	align-self: flex-start;
   background-color: lightblue;
+	border-radius: 1em;
 	
 	margin: 1rem;
 	padding: 0.5rem;
