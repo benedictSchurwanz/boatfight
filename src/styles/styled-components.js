@@ -26,6 +26,6 @@ export const BoardContainer = styled.div`
   background-color: lightblue;
 	border-radius: 1em;
 	
-	margin: 1rem;
-	padding: 0.5rem;
+	margin: 1em;
+	padding: 1em;
 `
