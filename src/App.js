@@ -15,7 +15,7 @@ function App() {
   return (
     <Container>
       <Title>BoatFight</Title>
-      <BoardContainer>BoardContainer component</BoardContainer>
+      <BoardContainer>BoardContainer</BoardContainer>
     </Container>
   );
 }
@@ -23,9 +23,8 @@ function App() {
 export default App;
 
 /* Do Next:
-- style BoardContainer
-- put it in App
-- have a look
+
+- board grid
 
 
 */
