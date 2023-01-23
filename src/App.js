@@ -10,12 +10,14 @@ import {
   BoardContainer,
   Title
  } from "./styles/styled-components"
+ 
+ import { BOARD_GRID_STRING } from "./game-settings/game-settings-helpers/text-grid.js";
 
 function App() {
   return (
     <Container>
       <Title>BoatFight</Title>
-      <BoardContainer>BoardContainer</BoardContainer>
+      <BoardContainer>{ BOARD_GRID_STRING }</BoardContainer>
     </Container>
   );
 }
