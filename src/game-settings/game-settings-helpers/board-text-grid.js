@@ -1,4 +1,4 @@
-const BOARD_GRID_STRING = 
+const board_text_grid_array = 
 [
 `       A     B     C     D     E     F     G     H     I     J    `,
 `    ------------------------------------------------------------- `,
@@ -24,6 +24,8 @@ const BOARD_GRID_STRING =
 `    ------------------------------------------------------------- `
 ]
 
-// console.log(BOARD_GRID_STRING)
+const BOARD_TEXT_GRID = board_text_grid_array.join(`\n`)
 
-export { BOARD_GRID_STRING };
+// console.log(BOARD_TEXT_GRID)
+
+export { BOARD_TEXT_GRID };

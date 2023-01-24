@@ -9,15 +9,19 @@ import {
   Container,
   BoardContainer,
   Title
- } from "./styles/styled-components"
+ } from "./styles/styled-components";
  
- import { BOARD_GRID_STRING } from "./game-settings/game-settings-helpers/text-grid.js";
+import { BOARD_TEXT_GRID } from "./game-settings/game-settings-helpers/board-text-grid.js";
 
 function App() {
   return (
     <Container>
       <Title>BoatFight</Title>
-      <BoardContainer>{ BOARD_GRID_STRING }</BoardContainer>
+      <BoardContainer>
+        <p> 
+          { BOARD_TEXT_GRID }
+        </p>
+      </BoardContainer>
     </Container>
   );
 }
@@ -25,8 +29,6 @@ function App() {
 export default App;
 
 /* Do Next:
-
-- board grid
 
 
 */
