@@ -16,11 +16,6 @@ body {
   background: ghostwhite;
 }
 
-.board-grid {
-  white-space: pre-wrap;
-  font-family: monospace;
-}
-
 /* 
 Do:
 Find out how to make the text bigger automatically to fit the parent container

@@ -6,7 +6,7 @@ import { BOARD_TEXT_GRID } from "../game-settings/game-settings-helpers/board-te
 const Board = () => {
 	return (
 		<BoardContainer>
-			<p className="board-grid">
+			<p>
 				{ BOARD_TEXT_GRID }
 			</p>
 		</BoardContainer>

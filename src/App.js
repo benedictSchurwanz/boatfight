@@ -25,5 +25,8 @@ function App() {
 export default App;
 
 /* Do Next:
+Learn how to do a grid in React
+- do a cell
+- do lots of cells
 
 */
