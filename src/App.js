@@ -2,23 +2,23 @@
 import React from "react";
 
 // React Components
-import Board from "./components/Board"
+import Board from "./components/Board/Board"
 
 // CSS
 import './index.css';
 
 // Styled Components
 import { 
-  Container,
+  AppContainer,
   Title
  } from "./styles/styled-components";
  
 function App() {
   return (
-    <Container>
+    <AppContainer>
       <Title>BoatFight</Title>
       <Board />
-    </Container>
+    </AppContainer>
   );
 }
 
