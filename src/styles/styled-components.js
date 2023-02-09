@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const AppContainer = styled.div`
 	// border: 10px solid red;
 	
 	display: flex;
