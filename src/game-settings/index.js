@@ -1,6 +1,6 @@
 // Game settings 
 
-export const starting_fleet_lengths = {
+export const starting_fleet_with_lengths = {
 	"Carrier": 5,
 	"Battleship": 4,
 	"Cruiser": 3,

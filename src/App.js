@@ -2,22 +2,23 @@
 import React from "react";
 
 // React Components
-import Board from "./components/Board/Board"
+import Board from "./components/Board/Board";
+import { InfoDisplay } from "./components/InfoDisplay/InfoDisplay.js";
 
 // CSS
-import './index.css';
+import "./index.css";
 
 // Styled Components
-import { 
-  AppContainer,
-  Title
- } from "./styles/styled-components";
- 
+import { AppContainer, Title, GameDisplay } from "./styles/styled-components";
+
 function App() {
   return (
     <AppContainer>
       <Title>BoatFight</Title>
-      <Board />
+      <GameDisplay>
+        <Board />
+        <InfoDisplay />
+      </GameDisplay>
     </AppContainer>
   );
 }
