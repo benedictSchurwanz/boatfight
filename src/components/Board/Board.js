@@ -1,6 +1,6 @@
 import React from "react";
 
-import { BoardContainer } from "../../styles/styled-components";
+import { BoardContainer } from "../../styles";
 import { BoardGrid } from "./BoardGrid";
 
 const Board = () => {

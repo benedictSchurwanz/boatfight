@@ -41,14 +41,14 @@ export const player = {
 }
 
 export const boat = {
-	boat_type: "",
-	max_health: 0,
+	name: "",
+	size: 0,
 	current_health: 0,
 	is_sunk: () => { return this.current_health <= 0 },
 	is_floating: () => { return this.current_health > 0 },
 }
 
 export const shot = {
-	is_hit: null,
-	is_miss: !this.is_hit,
+	is_a_hit: null,
+	is_a_miss: !this.is_hit,
 }

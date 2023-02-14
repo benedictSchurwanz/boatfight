@@ -3,13 +3,13 @@ import React from "react";
 
 // React Components
 import Board from "./components/Board/Board";
-import { InfoDisplay } from "./components/InfoDisplay/InfoDisplay.js";
+import { GameInfoBox } from "./components/GameInfoBox/GameInfoBox.js";
 
 // CSS
 import "./index.css";
 
 // Styled Components
-import { AppContainer, Title, GameDisplay } from "./styles/styled-components";
+import { AppContainer, Title, GameDisplay } from "./styles";
 
 function App() {
   return (
@@ -17,7 +17,7 @@ function App() {
       <Title>BoatFight</Title>
       <GameDisplay>
         <Board />
-        <InfoDisplay />
+        <GameInfoBox />
       </GameDisplay>
     </AppContainer>
   );
