@@ -1,17 +1,18 @@
 import React from "react";
 import fleet from "../../game-settings";
-import { GameInfoContainer } from "../../styles";
+import { GameInfoContainer, GameInfoHeader, UL } from "../../styles";
 
 const GameInfoBox = () => {
   const boatList = fleet;
-  console.log(boatList);
+
   return (
     <GameInfoContainer>
-      <ul>
+      <GameInfoHeader>Your Fleet</GameInfoHeader>
+      <UL>
         {boatList.map((boat) => (
-          <li>{boat.name}</li>
+          <li key={boat.name}>{boat.name}</li>
         ))}
-      </ul>
+      </UL>
     </GameInfoContainer>
   );
 };

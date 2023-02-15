@@ -9,16 +9,16 @@ import GameInfoBox from "./components/GameInfoBox/GameInfoBox.js";
 import "./index.css";
 
 // Styled Components
-import { AppContainer, Title, GameDisplay } from "./styles";
+import { AppContainer, Title, GameContainer } from "./styles";
 
 function App() {
   return (
     <AppContainer>
       <Title>BoatFight</Title>
-      <GameDisplay>
+      <GameContainer>
         <Board />
         <GameInfoBox />
-      </GameDisplay>
+      </GameContainer>
     </AppContainer>
   );
 }

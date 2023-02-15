@@ -18,9 +18,9 @@ export const Title = styled.h1`
   width: auto;
 `;
 
-export const GameDisplay = styled.div`
+export const GameContainer = styled.div`
   // border for debugging purposes:
-  border: 1px solid gray;
+  // border: 1px solid gray;
 
   // display: block;
   display: flex;
@@ -65,7 +65,7 @@ export const GameInfoContainer = styled.div`
   // height: 50vw;
 
   display: flex;
-  // align-self: flex-end;
+  flex-direction: column;
   background-color: lightblue;
   border-radius: 1em;
 
@@ -80,3 +80,20 @@ export const GameInfoContainer = styled.div`
     line-height: 1.175rem;
   }
 `;
+
+export const GameInfoHeader = styled.h2`
+  color: slategray;
+  font-size: 1.1rem;
+  padding-left: 2rem;
+  padding-top: 0.5rem;
+  margin: 0;
+`
+
+export const UL = styled.ul`
+  padding-bottom: 2rem;
+  border-bottom: 1px solid lightslategray;
+`;
+
+export const FormContainer = styled.div`
+  padding: 2rem;
+`
