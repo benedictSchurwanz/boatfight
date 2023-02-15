@@ -1,13 +1,19 @@
 import React from "react";
-import { Descriptions } from "antd";
-import { showBoatsStillFloating } from "./helper-functions";
+import fleet from "../../game-settings";
+import { GameInfoContainer } from "../../styles";
 
-export const GameInfoBox = () => {
+const GameInfoBox = () => {
+  const boatList = fleet;
+  console.log(boatList);
   return (
-    <Descriptions>
-      <Descriptions.Item label="Boats: ">
-        {showBoatsStillFloating()}
-      </Descriptions.Item>
-    </Descriptions>
+    <GameInfoContainer>
+      <ul>
+        {boatList.map((boat) => (
+          <li>{boat.name}</li>
+        ))}
+      </ul>
+    </GameInfoContainer>
   );
 };
+
+export default GameInfoBox;

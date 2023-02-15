@@ -3,7 +3,7 @@ import React from "react";
 
 // React Components
 import Board from "./components/Board/Board";
-import { GameInfoBox } from "./components/GameInfoBox/GameInfoBox.js";
+import GameInfoBox from "./components/GameInfoBox/GameInfoBox.js";
 
 // CSS
 import "./index.css";

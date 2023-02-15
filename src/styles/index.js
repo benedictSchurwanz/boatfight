@@ -1,7 +1,8 @@
 import styled from "styled-components";
 
 export const AppContainer = styled.div`
-  // border: 10px solid red;
+  // border for debugging purposes:
+  // border: 10px solid gray;
 
   display: flex;
   flex: 0 1 auto;
@@ -11,30 +12,35 @@ export const AppContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  // border: 1px solid red;
+  // border for debugging purposes:
+  // border: 1px solid gray;
 
   width: auto;
 `;
 
 export const GameDisplay = styled.div`
-  // display: flex;
-  // flex-direction: row;
-  display: block;
+  // border for debugging purposes:
+  border: 1px solid gray;
+
+  // display: block;
+  display: flex;
+  flex-direction: row;
   width: 100%;
 `;
 
-// Board
 export const BoardContainer = styled.div`
-  border: 1px solid red;
+  // border for debugging purposes:
+  // border: 1px solid gray;
 
   width: 50vw;
   // height: 50vw;
 
-  align-self: flex-start;
+  display: flex;
+  // align-self: flex-start;
   background-color: lightblue;
   border-radius: 1em;
 
-  margin: 1em;
+  margin: 0.5em;
   padding: 1rem;
   padding-bottom: 2.2rem;
 
@@ -47,5 +53,30 @@ export const BoardContainer = styled.div`
 `;
 
 export const BoardGridContent = styled.div`
+  // border for debugging purposes:
   font-size: 0.725rem;
-`
+`;
+
+export const GameInfoContainer = styled.div`
+  // border for debugging purposes:
+  // border: 1px solid gray;
+
+  width: 40vw;
+  // height: 50vw;
+
+  display: flex;
+  // align-self: flex-end;
+  background-color: lightblue;
+  border-radius: 1em;
+
+  margin: 0.5em;
+  padding: 1rem;
+  padding-bottom: 2.2rem;
+
+  * {
+    white-space: pre-wrap;
+    font-family: monospace;
+    font-size: 0.825rem;
+    line-height: 1.175rem;
+  }
+`;

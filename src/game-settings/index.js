@@ -1,10 +1,24 @@
-// Game settings 
+// Game settings
 
-export const starting_fleet_with_lengths = {
-	"Carrier": 5,
-	"Battleship": 4,
-	"Cruiser": 3,
-	"Submarine": 3,
-	"Destroyer": 2,
+function Boat(name, length) {
+  this.name = name;
+  this.length = length;
 }
-// export const fleet_size = starting_fleet_lengths.length; // this should be set or derived elsewhere
+
+const DEFAULT_FLEET = [
+  new Boat("Carrier", 5),
+  new Boat("Battleship", 4),
+  new Boat("Cruiser", 3),
+  new Boat("Submarine", 3),
+  new Boat("Destroyer", 2),
+];
+
+// I want to export the fleet chosen by the game settings.
+// right now, there's only one fleet to select, so the fleet chosen will be the default.
+//
+
+function setupFleet() {
+  return DEFAULT_FLEET;
+}
+
+export default DEFAULT_FLEET;
