@@ -1,15 +1,14 @@
 import React from "react";
-import { FormContainer, GameInfoContainer, GameInfoHeader } from "../../styles";
+import { GameInfoContainer, GameInfoHeader } from "../../styles";
 import BoatList from "./BoatList";
+import TargetInputForm from "./TargetInputForm";
 
 const GameInfoBox = () => {
   return (
     <GameInfoContainer>
       <GameInfoHeader>Your Fleet</GameInfoHeader>
       <BoatList />
-      <FormContainer>
-        hi
-      </FormContainer>
+      <TargetInputForm />
     </GameInfoContainer>
   );
 };
