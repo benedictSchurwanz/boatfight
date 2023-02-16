@@ -95,5 +95,6 @@ export const UL = styled.ul`
 `;
 
 export const FormContainer = styled.div`
+  border: 1px solid brown;
   padding: 2rem;
 `
