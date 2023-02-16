@@ -25,7 +25,7 @@ export const GameContainer = styled.div`
   // display: block;
   display: flex;
   flex-direction: row;
-  width: 100%;
+  // width: 100%;
 `;
 
 export const BoardContainer = styled.div`
@@ -87,7 +87,7 @@ export const GameInfoHeader = styled.h2`
   padding-left: 2rem;
   padding-top: 0.5rem;
   margin: 0;
-`
+`;
 
 export const UL = styled.ul`
   padding-bottom: 2rem;
@@ -95,6 +95,20 @@ export const UL = styled.ul`
 `;
 
 export const FormContainer = styled.div`
-  border: 1px solid brown;
+  // border: 1px solid brown;
   padding: 2rem;
-`
+  display: flex;
+  flex-direction: column;
+  * {
+    // border: 1px solid brown;
+  }
+`;
+
+export const FireButton = styled.div`
+  display: flex;
+  justify-content: center;
+
+  * {
+    // width: 4em;
+  }
+`;
