@@ -8,7 +8,7 @@ const initialState = {
 
 const boatReducer = createReducer(initialState, (builder) => {
   builder
-    .addCase()
+    .addDefaultCase((state) => state)
 });
 
 export default boatReducer;
