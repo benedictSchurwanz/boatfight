@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const AppContainer = styled.div`
-  // border for debugging purposes:
   // border: 10px solid gray;
 
   display: flex;
@@ -12,14 +11,12 @@ export const AppContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  // border for debugging purposes:
   // border: 1px solid gray;
 
   width: auto;
 `;
 
 export const GameContainer = styled.div`
-  // border for debugging purposes:
   // border: 1px solid gray;
 
   // display: block;
@@ -29,14 +26,13 @@ export const GameContainer = styled.div`
 `;
 
 export const BoardContainer = styled.div`
-  // border for debugging purposes:
   // border: 1px solid gray;
 
   width: 50vw;
   // height: 50vw;
 
   display: flex;
-  // align-self: flex-start;
+  justify-content: center;
   background-color: lightblue;
   border-radius: 1em;
 
@@ -53,12 +49,10 @@ export const BoardContainer = styled.div`
 `;
 
 export const BoardGridContent = styled.div`
-  // border for debugging purposes:
   font-size: 0.725rem;
 `;
 
 export const GameInfoContainer = styled.div`
-  // border for debugging purposes:
   // border: 1px solid gray;
 
   width: 40vw;
