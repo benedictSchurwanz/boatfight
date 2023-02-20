@@ -1,18 +1,29 @@
 import React from "react";
+
+import { setup } from "../../reducers/gameReducer.js";
+
 import { FormContainer, FireButton } from "../../styles";
 import { TextField, Button } from "@mui/material";
 
-const TargetInputForm = () => {
+const TargetInputForm = (props) => {
   return (
     <FormContainer>
       <TextField
         id="target-input"
-        label="Select your target:"
+        label="Identify target:"
         variant="outlined"
         helperText="example: A1"
       />
       <FireButton>
-        <Button variant="contained" size="medium" color="warning">
+        <Button
+          variant="contained"
+          size="medium"
+          color="warning"
+          onClick={() => {
+            console.log("Fire button was clicked")
+            // props.dispatch(setup())
+          }}
+        >
           Fire
         </Button>
       </FireButton>

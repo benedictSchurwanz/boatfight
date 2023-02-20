@@ -3,12 +3,12 @@ import { GameInfoContainer, GameInfoHeader } from "../../styles";
 import BoatList from "./BoatList";
 import TargetInputForm from "./TargetInputForm";
 
-const GameInfoBox = () => {
+const GameInfoBox = (props) => {
   return (
     <GameInfoContainer>
       <GameInfoHeader>Your Fleet</GameInfoHeader>
       <BoatList />
-      <TargetInputForm />
+      <TargetInputForm dispatch={props.dispatch}/>
     </GameInfoContainer>
   );
 };
