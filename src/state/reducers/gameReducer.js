@@ -1,10 +1,11 @@
 // Dependencies
-import { createReducer, createAction } from "@reduxjs/toolkit";
-
+import { createReducer } from "@reduxjs/toolkit";
 // Action Creators
-export const setup = createAction("game/setup");
-export const nextTurn = createAction("game/nextTurn");
-export const declareWinner = createAction("game/declareWinner");
+import {
+  setup,
+  nextTurn,
+  declareWinner,
+} from "../action-creators/game-actions";
 
 const initialState = {
   player1: {},
@@ -17,15 +18,15 @@ const initialState = {
 
 const gameReducer = createReducer(initialState, (builder) => {
   builder
-  // .addCase(actionName, (state, action) => {
+    // .addCase(actionName, (state, action) => {
     .addCase(setup, (state, action) => {
-        console.log(state)
-        return state;
-      })
-      .addCase(nextTurn, (state, action) => {
-        return state;
-      })
-      .addCase(declareWinner, (state) => {
+      console.log("game/setup reducer case");
+      return state;
+    })
+    .addCase(nextTurn, (state, action) => {
+      return state;
+    })
+    .addCase(declareWinner, (state) => {
       return state;
     })
     .addDefaultCase((state) => state);
