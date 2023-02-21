@@ -1,24 +1,21 @@
 // Dependencies
 import React from "react";
-import { useDispatch } from "react-redux";
+import { Routes, Route } from "react-router-dom";
 // Styles
 import "./index.css";
-import { AppContainer, Title, GameContainer } from "./styles";
-// Components
-import Board from "./components/Board/Board";
-import GameInfoBox from "./components/GameInfoBox/GameInfoBox.js";
-
+import { AppContainer, Title } from "./styles";
+// App Components
+import LandingPage from "./components/LandingPage";
+import Game from "./components/Game";
 
 function App() {
-  const dispatch = useDispatch()
-  
   return (
     <AppContainer>
-      <Title>BoatFight</Title>
-      <GameContainer>
-        <Board />
-        <GameInfoBox />
-      </GameContainer>
+      <Title>BoatFight!</Title>
+      <Routes>
+        <Route exact path="/" component={LandingPage}/>
+        <Route path="/game" component={Game}/>
+      </Routes>
     </AppContainer>
   );
 }
