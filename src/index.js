@@ -4,7 +4,7 @@ import ReactDOM from "react-dom/client";
 import { configureStore } from "@reduxjs/toolkit";
 // Components
 import App from "./App";
-import rootReducer from "./reducers";
+import rootReducer from "./state/reducers";
 import { Provider } from "react-redux";
 
 const store = configureStore({

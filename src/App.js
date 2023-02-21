@@ -1,14 +1,13 @@
 // Dependencies
 import React from "react";
 import { useDispatch } from "react-redux";
-
-// React Components
-import Board from "./components/Board/Board";
-import GameInfoBox from "./components/GameInfoBox/GameInfoBox.js";
-
 // Styles
 import "./index.css";
 import { AppContainer, Title, GameContainer } from "./styles";
+// Components
+import Board from "./components/Board/Board";
+import GameInfoBox from "./components/GameInfoBox/GameInfoBox.js";
+
 
 function App() {
   const dispatch = useDispatch()
@@ -18,7 +17,7 @@ function App() {
       <Title>BoatFight</Title>
       <GameContainer>
         <Board />
-        <GameInfoBox dispatch={dispatch}/>
+        <GameInfoBox />
       </GameContainer>
     </AppContainer>
   );

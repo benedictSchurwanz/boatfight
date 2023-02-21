@@ -1,18 +1,22 @@
+// Dependencies
 import React from "react";
-
-import { setup } from "../../reducers/gameReducer.js";
-
-import { FormContainer, FireButton } from "../../styles";
+import { useDispatch } from "react-redux";
+// Styles
 import { TextField, Button } from "@mui/material";
+import { FormContainer, FireButton } from "../../styles";
+// Components
+import { setup } from "../../state/reducers/gameReducer.js";
 
-const TargetInputForm = (props) => {
+const TargetInputForm = () => {
+  const dispatch = useDispatch();
+  
   return (
     <FormContainer>
       <TextField
         id="target-input"
         label="Identify target:"
         variant="outlined"
-        helperText="example: A1"
+        helperText="Example: A1"
       />
       <FireButton>
         <Button
@@ -21,7 +25,7 @@ const TargetInputForm = (props) => {
           color="warning"
           onClick={() => {
             console.log("Fire button was clicked")
-            // props.dispatch(setup())
+            dispatch(setup("hi"))
           }}
         >
           Fire
