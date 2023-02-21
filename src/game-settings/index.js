@@ -15,10 +15,12 @@ const DEFAULT_FLEET = [
 
 // I want to export the fleet chosen by the game settings.
 // right now, there's only one fleet to select, so the fleet chosen will be the default.
-//
 
-function setupFleet() {
-  return DEFAULT_FLEET;
-}
+// The following should be a function that checks the value in the store/settings
+// and chooses the proper fleet accordingly, 
+// returning it to the set up function - probably the fleet setup function
+// function setupFleet() {
+//   return DEFAULT_FLEET;
+// }
 
 export default DEFAULT_FLEET;
