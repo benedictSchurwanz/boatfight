@@ -1,6 +1,7 @@
 // Dependencies
 import React from "react";
 import ReactDOM from "react-dom/client";
+import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 // Components
 import App from "./App";
@@ -12,7 +13,9 @@ const store = configureStore({
 });
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <Provider store={store}>
-    <App />
-  </Provider>
+  <BrowserRouter>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </BrowserRouter>
 );
