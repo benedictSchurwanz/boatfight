@@ -16,6 +16,10 @@ body {
   background: ghostwhite;
 }
 
+a {
+  text-decoration: none;
+}
+
 /* 
 Do:
 Find out how to make the text bigger automatically to fit the parent container

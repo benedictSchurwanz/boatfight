@@ -13,8 +13,8 @@ function App() {
     <AppContainer>
       <Title>BoatFight!</Title>
       <Routes>
-        <Route exact path="/" component={LandingPage}/>
-        <Route path="/game" component={Game}/>
+        <Route exact path="/" element={<LandingPage />}/>
+        <Route path="/game" element={<Game />}/>
       </Routes>
     </AppContainer>
   );

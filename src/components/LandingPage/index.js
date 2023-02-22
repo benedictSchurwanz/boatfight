@@ -7,7 +7,7 @@ import { Button } from "@mui/material";
 const LandingPage = () => {
   return (
     <Link to="/game">
-      <Button variant="contained" color="standard">
+      <Button variant="contained" color="primary">
         Start Game
       </Button>
     </Link>
