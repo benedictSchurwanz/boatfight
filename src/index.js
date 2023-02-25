@@ -5,7 +5,7 @@ import { BrowserRouter } from "react-router-dom";
 import { configureStore } from "@reduxjs/toolkit";
 // Components
 import App from "./App";
-import rootReducer from "./state/reducers";
+import rootReducer from "./state/reducers/rootReducer";
 import { Provider } from "react-redux";
 
 const store = configureStore({
