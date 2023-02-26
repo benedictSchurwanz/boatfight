@@ -1,10 +1,10 @@
 import React from "react";
-import fleet from "../../../game-settings";
+import { fleet } from "../../../game-settings/index"
 import { UL } from "../../../styles";
 
 const BoatList = () => {
   const boatList = fleet;
-
+  
   return (
     <UL>
       {boatList.map((boat) => (

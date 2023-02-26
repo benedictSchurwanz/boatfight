@@ -5,8 +5,8 @@ import { Routes, Route } from "react-router-dom";
 import "./index.css";
 import { AppContainer, Title } from "./styles";
 // App Components
-import LandingPage from "./components/LandingPage";
-import Game from "./components/Game";
+import LandingPage from "./pages/LandingPage";
+import Game from "./pages/Game";
 
 function App() {
   return (

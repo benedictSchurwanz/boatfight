@@ -5,7 +5,7 @@ import { createReducer, createAction } from "@reduxjs/toolkit";
 export const fleet = createAction("settings/fleet")
 
 const initialState = {
-	fleet: "default"
+	fleet: "DEFAULT"
 }
 
 const settingsReducer = createReducer(initialState, (builder) => {
