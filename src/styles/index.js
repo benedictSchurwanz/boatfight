@@ -36,7 +36,7 @@ export const BoardContainer = styled.div`
   // height: 50vw;
 
   display: flex;
-  // align-self: flex-start;
+  justify-content: center;
   background-color: lightblue;
   border-radius: 1em;
 
