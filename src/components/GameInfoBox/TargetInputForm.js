@@ -7,7 +7,7 @@ const TargetInputForm = () => {
     <FormContainer>
       <TextField
         id="target-input"
-        label="Select your target:"
+        label="Identify target:"
         variant="outlined"
         helperText="example: A1"
       />

@@ -1,5 +1,5 @@
 import React from "react";
-import fleet from "../../game-settings";
+import { fleet } from "../../game-settings";
 import { UL } from "../../styles";
 
 const BoatList = () => {
