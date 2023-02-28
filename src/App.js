@@ -1,47 +1,43 @@
 // Dependencies
-import React from "react";
+import React, { createContext, useEffect, useState } from "react";
 import { Routes, Route } from "react-router";
-// React Components
-import LandingPage from "./components/LandingPage"
-import Game from "./components/Game"
 // Styles
 import { AppContainer, Title } from "./styles";
 import "./index.css";
+// React Components
+import LandingPage from "./components/LandingPage";
+import Game from "./components/Game";
+// state
+import initialState from "./state";
 
-const initialGameState = {
-  game_id: 0,
-  player1: {},
-  player2: {},
-  score: {},
-  winner: 0,
-};
+export const AppContext = createContext();
 
-const initialPlayerState = {
-  player_id: 0,
-  player_name: "",
-  board: [],
-  fleet: [],
-  boats_floating: null,
-};
-
-const initialFleetState = [];
-
-const initialBoatState = {
-  boat_name: "",
-  boat_length: 0,
-  boat_status: [], // array containing the squares of the boat, containing hit/miss/open
-};
-
-function App() {
+export default function App() {
+	const [state, setState] = useState(initialState)
+		
+	// useEffect(() => {
+  //   setState((state) => {
+  //     return {
+	// 			...state,
+	// 			game: {
+	// 				...state.game,
+	// 				current_player: 1
+	// 			}
+  //     };
+  //   });
+  // }, []);
+	
+	console.log(state[state.current_player]);
+	
   return (
-    <AppContainer>
-      <Title>BoatFight!</Title>
-      <Routes>
-        <Route exact path="/" element={<LandingPage />}/>
-        <Route path="/game" element={<Game />}/>
-      </Routes>
-    </AppContainer>
+    <AppContext.Provider value={{ state, setState }}>
+      <AppContainer>
+        <Title>BoatFight!</Title>
+        <Routes>
+          <Route exact path="/" element={<LandingPage />} />
+          <Route path="/game" element={<Game />} />
+        </Routes>
+      </AppContainer>
+    </AppContext.Provider>
   );
 }
-
-export default App;

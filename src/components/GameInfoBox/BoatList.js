@@ -1,13 +1,14 @@
-import React from "react";
-import { fleet } from "../../game-settings";
+import React, { useContext } from "react";
 import { UL } from "../../styles";
+import { AppContext } from "../../App";
 
 const BoatList = () => {
-  const boatList = fleet;
+  const { state, setState } = useContext(AppContext);
+  const fleet = state[state.current_player].fleet
 
   return (
     <UL>
-      {boatList.map((boat) => (
+      {fleet.map((boat) => (
         <li key={boat.name}>{boat.name}</li>
       ))}
     </UL>
