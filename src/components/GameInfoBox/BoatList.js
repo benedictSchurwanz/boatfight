@@ -1,10 +1,10 @@
 import React, { useContext } from "react";
 import { UL } from "../../styles";
-import { AppContext } from "../../App";
+import { GameContext } from "../../App";
 
 const BoatList = () => {
-  const { state, setState } = useContext(AppContext);
-  const fleet = state[state.current_player].fleet
+  const { game } = useContext(GameContext);
+  const fleet = game[game.current_player].fleet
 
   return (
     <UL>

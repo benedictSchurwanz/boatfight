@@ -10,27 +10,13 @@ import Game from "./components/Game";
 // state
 import initialState from "./state";
 
-export const AppContext = createContext();
+export const GameContext = createContext();
 
 export default function App() {
-	const [state, setState] = useState(initialState)
-		
-	// useEffect(() => {
-  //   setState((state) => {
-  //     return {
-	// 			...state,
-	// 			game: {
-	// 				...state.game,
-	// 				current_player: 1
-	// 			}
-  //     };
-  //   });
-  // }, []);
-	
-	console.log(state[state.current_player]);
+	const [game, setGame] = useState(initialState)
 	
   return (
-    <AppContext.Provider value={{ state, setState }}>
+    <GameContext.Provider value={{ game, setGame }}>
       <AppContainer>
         <Title>BoatFight!</Title>
         <Routes>
@@ -38,6 +24,6 @@ export default function App() {
           <Route path="/game" element={<Game />} />
         </Routes>
       </AppContainer>
-    </AppContext.Provider>
+    </GameContext.Provider>
   );
 }
