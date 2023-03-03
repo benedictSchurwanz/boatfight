@@ -18,19 +18,19 @@ export const Title = styled.h1`
 
 export const GameContainer = styled.div`
   // border: 1px solid gray; // for debugging
-	
+
   // display: block;
   display: flex;
   flex-direction: row;
   width: 100vw;
-	
-	* {
-		margin-left: 1rem;
-	}
+
+  * {
+    margin-left: 1rem;
+  }
 `;
 
 export const BoardContainer = styled.div`
-	// border: 1px solid blue; // for debugging
+  // border: 1px solid blue; // for debugging
 
   width: 61.8vw;
 
@@ -39,7 +39,7 @@ export const BoardContainer = styled.div`
   background-color: lightblue;
   border-radius: 1em;
 
-	padding: 1rem;
+  padding: 1rem;
   padding-bottom: 2rem;
 
   * {
@@ -51,22 +51,29 @@ export const BoardContainer = styled.div`
 `;
 
 export const BoardGridContent = styled.div`
-	// border: 1px solid gray; // for debugging
+  // border: 1px solid gray; // for debugging
+
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0rem;
+  font-size: 0.725rem;
+
+  > * {
+    // border: 1px solid red;
+  }
+`;
+
+export const GridRowContainer = styled.div`
+  // border: 1px solid gray; // for debugging
 	
-	width: 100%;
-	margin: 0rem;
-	font-size: 0.725rem;
-	
-	> * {
-		// border: 1px solid red;
-	}
-	`;
-	
+	margin: 0.5em;
+	padding: 0.38em;
+`;
+
 export const BoardCellSquare = styled.div`
-	border: 1px solid gray; // for debugging
-	
-	
-`
+  border: 1px solid gray; // for debugging
+`;
 
 export const GameInfoContainer = styled.div`
   // border: 1px solid red; // for debugging
@@ -78,7 +85,7 @@ export const GameInfoContainer = styled.div`
   background-color: lightblue;
   border-radius: 1em;
 
-	margin-right: 1rem;
+  margin-right: 1rem;
   padding-bottom: 2.2rem;
 
   * {
@@ -88,9 +95,9 @@ export const GameInfoContainer = styled.div`
     line-height: 1.175rem;
   }
 
-	> * {
-		padding: 0.62rem;
-	}
+  > * {
+    padding: 0.62rem;
+  }
 `;
 
 export const GameInfoHeader = styled.h2`
@@ -105,25 +112,25 @@ export const GameInfoHeader = styled.h2`
 `;
 
 export const UL = styled.ul`
-	// border: 1px solid gray; // for debugging
-	
-	padding: 0.5rem 1rem 2rem 1rem;
-	margin: 0rem 1rem;
+  // border: 1px solid gray; // for debugging
+
+  padding: 0.5rem 1rem 2rem 1rem;
+  margin: 0rem 1rem;
   border-bottom: 1px solid lightslategray;
 `;
 
 export const FormContainer = styled.div`
-	// border: 1px solid red; // for debugging
-  
+  // border: 1px solid red; // for debugging
+
   display: flex;
   flex-direction: column;
-	
-	margin: 0rem 1rem;
-	padding: 1.62rem;
-	
+
+  margin: 0rem 1rem;
+  padding: 1.62rem;
+
   * {
     // border: 1px solid brown;
-		margin: 0;
+    margin: 0;
   }
 `;
 
