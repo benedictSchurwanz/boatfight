@@ -1,12 +1,25 @@
 import React from "react";
+import { Grid } from "@mui/material";
 
-import { BOARD_TEXT_GRID } from "../../game-settings/board-text-grid";
 import { BoardGridContent } from "../../styles";
 
 export const BoardGrid = () => {
-return (
-		<BoardGridContent>
-			{ BOARD_TEXT_GRID }
-		</BoardGridContent>
-	)	
-}
+  return (
+    <BoardGridContent>
+      <Grid container spacing={2}>
+        <Grid item xs={1}>
+          <div className="square">X</div>
+        </Grid>
+        <Grid item xs={1}>
+          <div className="square">X</div>
+        </Grid>
+        <Grid item xs={1}>
+          <div className="square">X</div>
+        </Grid>
+        <Grid item xs={1}>
+          <div className="square">X</div>
+        </Grid>
+      </Grid>
+    </BoardGridContent>
+  );
+};
