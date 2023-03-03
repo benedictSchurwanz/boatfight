@@ -30,7 +30,7 @@ export const GameContainer = styled.div`
 `;
 
 export const BoardContainer = styled.div`
-	border: 1px solid gray; // for debugging
+	// border: 1px solid blue; // for debugging
 
   width: 61.8vw;
 
@@ -56,7 +56,17 @@ export const BoardGridContent = styled.div`
 	width: 100%;
 	margin: 0rem;
 	font-size: 0.725rem;
-`;
+	
+	> * {
+		// border: 1px solid red;
+	}
+	`;
+	
+export const BoardCellSquare = styled.div`
+	border: 1px solid gray; // for debugging
+	
+	
+`
 
 export const GameInfoContainer = styled.div`
   // border: 1px solid red; // for debugging
