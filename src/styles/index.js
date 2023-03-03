@@ -39,7 +39,11 @@ export const BoardContainer = styled.div`
   background-color: lightblue;
   border-radius: 1em;
 
+<<<<<<< HEAD
 	padding: 1rem;
+=======
+	padding: 1.62rem;
+>>>>>>> f68f03c646578ec4a7655f5b08ae69f0dd5ed536
   padding-bottom: 2rem;
 
   * {
@@ -84,7 +88,11 @@ export const GameInfoContainer = styled.div`
 `;
 
 export const GameInfoHeader = styled.h2`
+<<<<<<< HEAD
 	border: 1px solid gray; // for debugging
+=======
+	// border: 1px solid gray; // for debugging
+>>>>>>> f68f03c646578ec4a7655f5b08ae69f0dd5ed536
 
   color: slategray;
   font-size: 1.1rem;
@@ -97,8 +105,14 @@ export const GameInfoHeader = styled.h2`
 export const UL = styled.ul`
 	// border: 1px solid gray; // for debugging
 	
+<<<<<<< HEAD
 	padding: 0.5rem 1rem 2rem 1rem;
 	margin: 0rem 1rem;
+=======
+	padding: 1rem;
+  padding-bottom: 2rem;
+	margin: 1rem;
+>>>>>>> f68f03c646578ec4a7655f5b08ae69f0dd5ed536
   border-bottom: 1px solid lightslategray;
 `;
 
