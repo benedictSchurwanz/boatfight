@@ -5,9 +5,16 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 
 const LandingPage = () => {
+	const clickHandler = () => {
+		console.log("I've been clicked")
+	}
+	
   return (
     <Link to="/game">
-      <Button variant="contained">
+      <Button 
+				variant="contained"
+				onClick={clickHandler}
+			>
         Start Game
       </Button>
     </Link>
