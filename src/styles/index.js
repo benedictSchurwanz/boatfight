@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const AppContainer = styled.div`
-  // border for debugging purposes:
-  // border: 10px solid gray;
+  // border: 10px solid gray; // for debugging
 
   display: flex;
   flex: 0 1 auto;
@@ -12,16 +11,14 @@ export const AppContainer = styled.div`
 `;
 
 export const Title = styled.h1`
-  // border for debugging purposes:
-  // border: 1px solid gray;
+  // border: 1px solid gray; // for debugging
 
   width: auto;
 `;
 
 export const GameContainer = styled.div`
-  // border for debugging purposes:
-  // border: 1px solid gray;
-
+  // border: 1px solid gray; // for debugging
+	
   // display: block;
   display: flex;
   flex-direction: row;
@@ -29,8 +26,7 @@ export const GameContainer = styled.div`
 `;
 
 export const BoardContainer = styled.div`
-  // border for debugging purposes:
-  // border: 1px solid gray;
+	// border: 1px solid gray; // for debugging
 
   width: 50vw;
   // height: 50vw;
@@ -53,13 +49,13 @@ export const BoardContainer = styled.div`
 `;
 
 export const BoardGridContent = styled.div`
-  // border for debugging purposes:
-  font-size: 0.725rem;
+	// border: 1px solid gray; // for debugging
+	
+	font-size: 0.725rem;
 `;
 
 export const GameInfoContainer = styled.div`
-  // border for debugging purposes:
-  // border: 1px solid gray;
+  // border: 1px solid gray; // for debugging
 
   width: 40vw;
   // height: 50vw;
@@ -95,8 +91,9 @@ export const UL = styled.ul`
 `;
 
 export const FormContainer = styled.div`
-  // border: 1px solid brown;
-  padding: 2rem;
+	// border: 1px solid gray; // for debugging
+  
+	padding: 2rem;
   display: flex;
   flex-direction: column;
   * {
@@ -107,8 +104,4 @@ export const FormContainer = styled.div`
 export const FireButton = styled.div`
   display: flex;
   justify-content: center;
-
-  * {
-    // width: 4em;
-  }
 `;
