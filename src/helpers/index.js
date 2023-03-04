@@ -2,7 +2,7 @@ const alphabetlc = "abcdefghijklmnopqrstuvwxyz";
 const alphabetCap = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 export const nextletterlc = (letter) => {
-  if (alphabetlc.includes(letter)) {
+  if (letter !== "z" && alphabetlc.includes(letter)) {
     const index = alphabetlc.indexOf(letter);
     return alphabetlc[index + 1];
   } else {
@@ -11,7 +11,7 @@ export const nextletterlc = (letter) => {
 };
 
 export const nextletterCap = (letter) => {
-  if (alphabetCap.includes(letter)) {
+  if (letter !== "Z" && alphabetCap.includes(letter)) {
     const index = alphabetCap.indexOf(letter);
     return alphabetCap[index + 1];
   } else {
@@ -33,7 +33,7 @@ export const numberRangeExc = (start, end) => {
 	return output;
 }
 
-export const numberRangeInc = (start, end) => {
+export const numberRange = (start, end) => {
 	if (!Number.isInteger(start) || !Number.isInteger(end)) {
 		return undefined;
 	}
