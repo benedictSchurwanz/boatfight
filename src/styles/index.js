@@ -16,18 +16,21 @@ export const Title = styled.h1`
   width: auto;
 `;
 
+///////// Game Display //////////////////////////
+
 export const GameContainer = styled.div`
   // border: 1px solid gray; // for debugging
 
-  // display: block;
   display: flex;
   flex-direction: row;
   width: 100vw;
 
-  * {
+  > * {
     margin-left: 1rem;
   }
 `;
+
+///////// Game Board ////////////////////////////
 
 export const BoardContainer = styled.div`
   // border: 1px solid blue; // for debugging
@@ -37,7 +40,7 @@ export const BoardContainer = styled.div`
   display: flex;
   justify-content: center;
   background-color: lightblue;
-  border-radius: 1em;
+  border-radius: 1rem;
 
   padding: 1rem;
   padding-bottom: 2rem;
@@ -51,29 +54,46 @@ export const BoardContainer = styled.div`
 `;
 
 export const BoardGridContent = styled.div`
-  // border: 1px solid gray; // for debugging
+  border: 1px solid red; // for debugging
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   width: 100%;
   margin: 0rem;
   font-size: 0.725rem;
 
   > * {
     // border: 1px solid red;
+
   }
 `;
 
 export const GridRowContainer = styled.div`
   // border: 1px solid gray; // for debugging
 	
-	margin: 0.5em;
-	padding: 0.38em;
+	margin: 0.38rem;
+	padding: 0.38rem;
 `;
 
-export const BoardCellSquare = styled.div`
+export const GridCellSquare = styled.div`
   border: 1px solid gray; // for debugging
+
+  width: 5%;
+  height: 2vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 `;
+
+export const ColumnLabelsContainer = styled.div`
+	margin: 0.38rem;
+	padding: 0.38rem;
+`;
+
+export const RowLabelContainer = styled.div``;
+
+///////// Game Info Box /////////////////////////
 
 export const GameInfoContainer = styled.div`
   // border: 1px solid red; // for debugging
@@ -114,7 +134,7 @@ export const GameInfoHeader = styled.h2`
 export const UL = styled.ul`
   // border: 1px solid gray; // for debugging
 
-  padding: 0.5rem 1rem 2rem 1rem;
+  padding: 0.5rem 1rem 2rem 2rem;
   margin: 0rem 1rem;
   border-bottom: 1px solid lightslategray;
 `;
