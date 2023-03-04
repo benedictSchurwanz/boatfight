@@ -86,11 +86,6 @@ export const GridCellSquare = styled.div`
   align-items: center;
 `;
 
-export const ColumnLabelsContainer = styled.div`
-	margin: 0.38rem;
-	padding: 0.38rem;
-`;
-
 export const RowLabelContainer = styled.div``;
 
 ///////// Game Info Box /////////////////////////

@@ -42,7 +42,10 @@ const GridRow = () => {
         columns="11"
         justifyContent="space-evenly"
       >
-        <RowLabel />
+        <RowLabel
+          content={`💥
+				`}
+        />
         <GridCell />
         <GridCell />
         <GridCell />
@@ -59,40 +62,19 @@ const GridRow = () => {
 };
 
 const ColumnLabels = () => {
-  return (
-    <GridRowContainer>
-      <Grid
-        container
-        spacing={"1rem"}
-        columns="11"
-        justifyContent="space-evenly"
-      >
-        <RowLabel />
-        <GridCell />
-        <GridCell />
-        <GridCell />
-        <GridCell />
-        <GridCell />
-        <GridCell />
-        <GridCell />
-        <GridCell />
-        <GridCell />
-        <GridCell />
-      </Grid>
-    </GridRowContainer>
-  );
+  // different name for clarity, but produces the same content
+  return <GridRow />;
 };
 
-const RowLabel = () => {
-  // different name other than GridCell for clarity, but produces the same content
-  return <GridCell />;
+const RowLabel = ({ content }) => {
+  return <GridCell content={content} />;
 };
 
-const GridCell = () => {
+const GridCell = ({ content }) => {
   return (
     <GridCellSquare>
       <Grid item xs={0.95}>
-        <div className="square">{"X"}</div>
+        <div className="square">{content}</div>
       </Grid>
     </GridCellSquare>
   );
