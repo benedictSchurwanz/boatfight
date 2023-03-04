@@ -9,15 +9,16 @@ import {
 } from "../../styles";
 
 export const BoardGrid = () => {
-  const columns = Array.from("ABCDEFGHIJ");
+  const columns = Array.from(" ABCDEFGHIJ");
   const rows = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-  const cells = ["X", "X", "X", "X", "X", "X", "X", "X", "X", "X"];
+  const cells = Array.from(10, () => "_");
 
   return (
     <BoardGridContent>
       {/* 10 rows of squares + 1 row of labels: */}
       <Grid container direction={"column"} columns={11}>
-        <ColumnLabels />
+        <ColumnLabels content={columns}/>
+				{}
         <GridRow />
         <GridRow />
         <GridRow />
@@ -33,7 +34,7 @@ export const BoardGrid = () => {
   );
 };
 
-const GridRow = () => {
+const GridRow = ({content}) => {
   return (
     <GridRowContainer>
       <Grid
@@ -61,9 +62,9 @@ const GridRow = () => {
   );
 };
 
-const ColumnLabels = () => {
-  // different name for clarity, but produces the same content
-  return <GridRow />;
+const ColumnLabels = ({content}) => {
+  // different name for readability, but produces the same content
+  return <GridRow content={content}/>;
 };
 
 const RowLabel = ({ content }) => {
