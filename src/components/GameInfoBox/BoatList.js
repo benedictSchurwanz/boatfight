@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { UL } from "../../styles";
+import { BoatListUL } from "../../styles";
 import { GameContext } from "../../App";
 
 const BoatList = () => {
@@ -7,11 +7,11 @@ const BoatList = () => {
   const fleet = game[game.current_player].fleet
 
   return (
-    <UL>
+    <BoatListUL>
       {fleet.map((boat) => (
         <li key={boat.name}>{boat.name}</li>
       ))}
-    </UL>
+    </BoatListUL>
   );
 };
 

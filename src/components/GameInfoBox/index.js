@@ -6,7 +6,7 @@ import TargetInputForm from "./TargetInputForm";
 const GameInfoBox = () => {
   return (
     <GameInfoContainer>
-      <GameInfoHeader>Your Fleet</GameInfoHeader>
+      <GameInfoHeader>Your Fleet: </GameInfoHeader>
       <BoatList />
       <TargetInputForm />
     </GameInfoContainer>
