@@ -64,15 +64,6 @@ export const GridContainer = styled.div`
 	padding: 0;
 `;
 
-export const RowContainer = styled.div`
-  border: 2px solid red;
-
-	// height: 1em;
-	
-  margin: 0;
-  padding: 0;
-`;
-
 export const Cell = styled.div`
   border: 1px solid gray; 
 	
