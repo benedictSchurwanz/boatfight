@@ -44,11 +44,11 @@ export const BoardContainer = styled.div`
 
   background-color: lightblue;
   border-radius: 1rem;
-  width: 60vw;
+  width: 59vw;
 
   display: flex;
 	
-	padding: 1rem;
+	padding: 2rem 1rem 1rem 2rem;
 `;
 
 export const GridContainer = styled.div`
@@ -82,7 +82,7 @@ export const GameInfoContainer = styled.div`
   background-color: lightblue;
   border-radius: 1rem;
 	
-  width: 37vw;
+  width: 36vw;
   display: flex;
   flex-direction: column;
 	
@@ -99,10 +99,6 @@ export const GameInfoHeader = styled.h2`
 	
 	margin: 0;
 	padding: 0.5rem 1.5rem 0;
-	
-	// display: flex;
-	// justify-content: center;
-	
 `;
 
 export const BoatListUL = styled.ul`

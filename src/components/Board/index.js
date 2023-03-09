@@ -33,15 +33,15 @@ const ColumnOfRows = () => {
 	
 	for (let i = 0; i < 10; i++) {
 		output.push(
-			<Row />
+			<Row rowNum={i}/>
 		)
 	}
 	
 	return output
 }
 
-const Row = () => {
-	const row = createBoxRow()
+const Row = ({rowNum}) => {
+	const row = createBoxRow({rowNum})
 	
   return (
 			<Stack 
@@ -60,24 +60,30 @@ const Row = () => {
 	)
 };
 
-const createBoxRow = () => {
+const createBoxRow = ({rowNum}) => {
 	const boxrow = []
 	
 	for (let i = 0; i < 10; i++) {
 		boxrow.push(
-			<Box 
-				sx={{
-					width: 1,
-					height: 1,
-					borderLeft: 2,
-					borderColor: "black",
-					textAlign: "center"
-				}}
-			>
-				X
-			</Box>
+				<Cell row={rowNum} col={i}/>
 			)
 	}
 	
 	return (boxrow)
 };
+
+const Cell = ({row, col, content}) => {
+	return (
+		<Box 
+			sx={{
+				width: 1,
+				height: 1,
+				borderLeft: 2,
+				borderColor: "black",
+				textAlign: "center"
+			}}
+		>
+			{content}
+		</Box>
+	)
+}
