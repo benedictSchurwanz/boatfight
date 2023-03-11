@@ -12,14 +12,28 @@ const game = {
   game_over: false,
 };
 
+const emptyCell = {
+	boat: EMPTY,
+	shot: OPEN,
+}
+
 const createBoard = () => {
-  return new Array(
-    10,
-    new Array(10, {
-      floating_here: EMPTY,
-      shot_status: OPEN,
-    })
-  );
+	// Create an array with 10 copies of
+	// an array with 10 copies of
+	// this object: { boat: EMPTY, shot: OPEN }	
+	
+	// Array.from(array-like object, function of what to put in each spot)
+	
+	// empty array, length: 10
+	const gridContainer = Array(10)
+	
+	// row of 10 "emptyCell"s
+	const emptyRow = Array.from(Array(10), () => emptyCell)
+	
+	// fill empty array with rows
+	const grid = Array.from(gridContainer, () => emptyRow)
+	
+	return grid
 };
 
 const createBoat = (name, size) => {
@@ -41,12 +55,12 @@ const initialState = {
 	turn_number: game.turn_number,
 	game_over: game.game_over,
   "1": {
-		name: "Alice",
+		name: "",
     board: createBoard(),
 		fleet: createFleet(fleet_type),
   },
   "2": {
-		name: "Bob",
+		name: "",
     board: createBoard(),
 		fleet: createFleet(fleet_type),
   },
