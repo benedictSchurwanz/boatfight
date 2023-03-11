@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const AppContainer = styled.div`
   // border: 1px solid gray; 
-	background-color: lightgrey;
+	// background-color: lightgrey;
 	
   display: flex;
   flex-direction: column;
@@ -14,6 +14,7 @@ export const Title = styled.h1`
 	
 	font-size: 2rem;
 	font-weight: bold;
+	font-family: monospace;
 	
 	margin: 0.38rem;
 `;
@@ -23,7 +24,7 @@ export const Title = styled.h1`
 
 
 export const GameContainer = styled.div`
-  border: 1px solid black; 
+  // border: 1px solid black; 
 
   width: 100vw;
 	
@@ -40,7 +41,7 @@ export const GameContainer = styled.div`
 
 
 export const BoardContainer = styled.div`
-  border: 2px solid white; 
+  // border: 2px solid white; 
 
   background-color: lightblue;
   border-radius: 1rem;
@@ -65,7 +66,7 @@ export const GridContainer = styled.div`
 `;
 
 export const Cell = styled.div`
-  border: 1px solid gray; 
+  // border: 1px solid gray; 
 	
   display: flex;
   justify-content: center;
@@ -77,7 +78,7 @@ export const Cell = styled.div`
 
 
 export const GameInfoContainer = styled.div`
-  border: 1px solid red; 
+  // border: 1px solid red; 
 
   background-color: lightblue;
   border-radius: 1rem;
@@ -90,7 +91,7 @@ export const GameInfoContainer = styled.div`
 `;
 
 export const GameInfoHeader = styled.h2`
-  border: 1px solid gray; 
+  // border: 1px solid gray; 
 
   color: slategray;
 	font-family: monospace;
@@ -102,7 +103,7 @@ export const GameInfoHeader = styled.h2`
 `;
 
 export const BoatListUL = styled.ul`
-  border: 1px solid gray; 
+  // border: 1px solid gray; 
 
   border-bottom: 1px solid lightslategray;
 
@@ -115,7 +116,7 @@ export const BoatListUL = styled.ul`
 
 
 export const FormContainer = styled.div`
-  border: 1px solid red; 
+  // border: 1px solid red; 
 
   display: flex;
   flex-direction: column;
@@ -124,7 +125,7 @@ export const FormContainer = styled.div`
 `;
 
 export const FireButton = styled.div`
-  border: 1px solid red; 
+  // border: 1px solid red; 
 
   display: flex;
   justify-content: center;
