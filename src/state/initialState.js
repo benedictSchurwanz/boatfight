@@ -12,26 +12,34 @@ const game = {
   game_over: false,
 };
 
-const emptyCell = {
-	boat: EMPTY,
-	shot: OPEN,
+const createEmptyCell = () => {
+	return (
+		{
+			boat: EMPTY,
+			shot: OPEN,
+		}
+	)
 }
+
+// row of 10 "emptyCell"s
+const createEmptyRow = () => {
+	return Array.from(
+		Array(10), // create an empty array
+		() => createEmptyCell() // fill each spot with an empty cell
+	)
+}
+
 
 const createBoard = () => {
 	// Create an array with 10 copies of
 	// an array with 10 copies of
 	// this object: { boat: EMPTY, shot: OPEN }	
 	
-	// Array.from(array-like object, function of what to put in each spot)
-	
 	// empty array, length: 10
 	const gridContainer = Array(10)
 	
-	// row of 10 "emptyCell"s
-	const emptyRow = Array.from(Array(10), () => emptyCell)
-	
-	// fill empty array with rows
-	const grid = Array.from(gridContainer, () => emptyRow)
+	// fill empty array with rows of empty Cells
+	const grid = Array.from(gridContainer, () => createEmptyRow())
 	
 	return grid
 };
