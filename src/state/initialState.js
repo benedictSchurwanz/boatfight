@@ -6,12 +6,6 @@ export const HIT = "HIT";
 export const MISS = "MISS";
 export const OPEN = "OPEN";
 
-const game = {
-  current_player: "1",
-  turn_number: 0,
-  game_over: false,
-};
-
 const createEmptyCell = () => {
 	return (
 		{
@@ -59,9 +53,9 @@ const createFleet = (fleet_type) => {
 };
 
 const initialState = {
-  current_player: game.current_player,
-	turn_number: game.turn_number,
-	game_over: game.game_over,
+  current_player_id: "1",
+	turn_number: "0",
+	game_over: false,
   "1": {
 		name: "",
     board: createBoard(),
