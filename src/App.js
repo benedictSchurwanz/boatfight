@@ -10,18 +10,18 @@ import LandingPage from "./components/LandingPage";
 import Game from "./components/Game";
 // state
 import initialState from "./state/initialState";
+import { useCurrentPlayer } from "./state/get";
 
-export const GameContext = createContext();
+export const GameContext = createContext(initialState);
+export const ThemeContext = createContext('light');
 
 export default function App() {
   const [game, setGame] = useState(initialState);
-
-	// console.log("", game[1].board[0][0])
 	
   return (
-    <>
-		<CssBaseline />
+		<>
 		<GameContext.Provider value={{ game, setGame }}>
+		<CssBaseline />
 			<AppContainer>
 				<Title>BoatFight!</Title>
 				<Routes>
@@ -33,3 +33,4 @@ export default function App() {
     </>
   );
 }
+
