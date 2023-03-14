@@ -1,14 +1,16 @@
 import { useContext } from "react";
-import { GameContext } from "../App";
+import { GameContext, PlayersContext } from "./contexts";
 
-export const getCell = (props) => {
-  // I want to get the player obj out of the context
-
-  return props;
-};
+// export const getCell = (props) => {
+//   return props;
+// };
 
 // take state, retrieve player object at key of current player
 export const useCurrentPlayer = () => {
-  const game = useContext(GameContext);
-  const { current } = game;
+	const { game } = useContext(GameContext)
+	const { current } = game;
+  const { players } = useContext(PlayersContext);
+	const player = players[current]
+	
+	return player;
 };
