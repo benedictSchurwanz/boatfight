@@ -14,7 +14,6 @@ export const Title = styled.h1`
 	
 	font-size: 2rem;
 	font-weight: bold;
-	font-family: monospace;
 	
 	margin: 0.38rem;
 `;

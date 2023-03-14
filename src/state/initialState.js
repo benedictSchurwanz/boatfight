@@ -57,12 +57,12 @@ const initialState = {
   },
   players: {
     1: {
-      name: "",
+      name: "Player 1",
       board: createBoard(),
       fleet: createFleet(fleet_type),
     },
     2: {
-      name: "",
+      name: "Player 2",
       board: createBoard(),
       fleet: createFleet(fleet_type),
     },

@@ -14,20 +14,20 @@ import { GameContext, PlayersContext } from "./state/contexts";
 
 export default function App() {
   const [game, setGame] = useState(initialState.game);
-	const [players, setPlayers] = useState(initialState.players)
-	
+  const [players, setPlayers] = useState(initialState.players);
+
   return (
-		<GameContext.Provider value={{ game, setGame }}>
-		<PlayersContext.Provider value={{ players, setPlayers }}>
-		<CssBaseline />
-			<AppContainer>
-				<Title>BoatFight!</Title>
-				<Routes>
-					<Route exact path="/" element={<LandingPage />} />
-					<Route path="/game" element={<Game />} />
-				</Routes>
-			</AppContainer>
-		</PlayersContext.Provider>
-		</GameContext.Provider>
+    <GameContext.Provider value={{ game, setGame }}>
+      <PlayersContext.Provider value={{ players, setPlayers }}>
+        <CssBaseline />
+        <AppContainer>
+          <Title>BoatFight!</Title>
+          <Routes>
+            <Route exact path="/" element={<LandingPage />} />
+            <Route path="/game" element={<Game />} />
+          </Routes>
+        </AppContainer>
+      </PlayersContext.Provider>
+    </GameContext.Provider>
   );
 }
