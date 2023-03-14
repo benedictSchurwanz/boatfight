@@ -48,7 +48,8 @@ const createFleet = (fleet_type) => {
 
 const initialState = {
   game: {
-    currentPlayer: "1",
+    current: "1",
+		opponent: "2",
     turn: "0",
     gameOver: false,
   },

@@ -1,5 +1,5 @@
 // Dependencies
-import React, { createContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router";
 // Styles
 import { AppContainer, Title } from "./styles";
@@ -11,12 +11,14 @@ import Game from "./components/Game";
 // state
 import initialState from "./state/initialState";
 import { GameContext, PlayersContext } from "./state/contexts";
+// hooks
+import { usePlayer, useCurrentPlayer, useBoard } from "./state/hooks";
 
 export default function App() {
   const [game, setGame] = useState(initialState.game);
   const [players, setPlayers] = useState(initialState.players);
-
-	console.log("initialState", initialState)
+	
+	// console.log(game.current)
 	
   return (
     <GameContext.Provider value={{ game, setGame }}>

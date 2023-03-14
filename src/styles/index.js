@@ -93,7 +93,6 @@ export const GameInfoHeader = styled.h2`
   // border: 1px solid gray; 
 
   color: slategray;
-	font-family: monospace;
   font-size: 1.25rem;
 	text-decoration: underline;
 	
@@ -107,7 +106,7 @@ export const BoatListUL = styled.ul`
   border-bottom: 1px solid lightslategray;
 
 	margin: 0;
-	padding: 0.5rem 2rem 0;
+	padding: 0.5rem 1rem 1rem 2rem;
 `;
 
 
