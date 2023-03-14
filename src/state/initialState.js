@@ -7,64 +7,65 @@ export const MISS = "MISS";
 export const OPEN = "OPEN";
 
 const createEmptyCell = () => {
-	return (
-		{
-			boat: EMPTY,
-			shot: OPEN,
-		}
-	)
-}
+  return {
+    boat: EMPTY,
+    shot: OPEN,
+  };
+};
 
 // row of 10 "emptyCell"s
 const createEmptyRow = () => {
-	return Array.from(
-		Array(10), // create an empty array
-		() => createEmptyCell() // fill each spot with an empty cell
-	)
-}
-
+  return Array.from(
+    Array(10), // create an empty array
+    () => createEmptyCell() // fill each spot with an empty cell
+  );
+};
 
 const createBoard = () => {
-	// Create an array with 10 copies of
-	// an array with 10 copies of
-	// this object: { boat: EMPTY, shot: OPEN }	
-	
-	// empty array, length: 10
-	const gridContainer = Array(10)
-	
-	// fill empty array with rows of empty Cells
-	const grid = Array.from(gridContainer, () => createEmptyRow())
-	
-	return grid
+  // Create an array with 10 copies of
+  // an array with 10 copies of
+  // this object: { boat: EMPTY, shot: OPEN }
+
+  // empty array, length: 10
+  const gridContainer = Array(10);
+
+  // fill empty array with rows of empty Cells
+  const grid = Array.from(gridContainer, () => createEmptyRow());
+
+  return grid;
 };
 
 const createBoat = (name, size) => {
-	return {
-		name: name,
-		hp_max: size,
-		hp_current: size,
-	}
-}
+  return {
+    name: name,
+    hp_max: size,
+    hp_current: size,
+  };
+};
 
 const createFleet = (fleet_type) => {
   return fleet_type.map((boat) => {
-		return createBoat(boat.name, boat.size)
-	});
+    return createBoat(boat.name, boat.size);
+  });
 };
 
 const initialState = {
-  current_player_id: "1",
-	turn_number: "0",
-	game_over: false,
-  "1": {
-		name: "",
-    board: createBoard(),
-		fleet: createFleet(fleet_type),
+  game: {
+    currentPlayer: "1",
+    turn: "0",
+    gameOver: false,
   },
-  "2": {
-		name: "",
-    board: createBoard(),
-		fleet: createFleet(fleet_type),
+  players: {
+    1: {
+      name: "",
+      board: createBoard(),
+      fleet: createFleet(fleet_type),
+    },
+    2: {
+      name: "",
+      board: createBoard(),
+      fleet: createFleet(fleet_type),
+    },
   },
 };
 
