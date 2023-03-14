@@ -1,5 +1,4 @@
-import React, { useContext } from "react";
-import { GameContext, PlayersContext } from "../../state/contexts";
+import React from "react";
 import { useCurrentPlayer } from "../../state/hooks";
 import { BoatListUL } from "../../styles";
 
