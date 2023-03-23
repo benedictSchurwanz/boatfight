@@ -1,1 +1,7 @@
-export const 
+const pickACell = (boardGridArrays, row, col) => {
+	
+}
+
+export const placeOneBoat = () => {
+	
+}
