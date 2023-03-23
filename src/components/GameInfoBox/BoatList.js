@@ -9,7 +9,7 @@ const BoatList = () => {
   return (
     <BoatListUL>
       {fleet.map((boat) => (
-        <li key={boat.name}>{boat.name}</li>
+        <li key={boat.name + "-" + player.name}>{boat.name}</li>
       ))}
     </BoatListUL>
   );
