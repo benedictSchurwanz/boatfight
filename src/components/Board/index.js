@@ -37,7 +37,7 @@ const ColumnOfRows = () => {
   const output = [];
 
   for (let i = 0; i < 10; i++) {
-    output.push(<Row rowNum={i} />);
+    output.push(<Row key={i.toString()} rowNum={i} />);
   }
 
   return output;
@@ -66,7 +66,7 @@ const createBoxRow = ({ rowNum }) => {
   const boxrow = [];
 
   for (let i = 0; i < 10; i++) {
-    boxrow.push(<Cell row={rowNum} col={i} />);
+    boxrow.push(<Cell key={rowNum + "" + i} row={rowNum} col={i} />);
   }
 
   return boxrow;
