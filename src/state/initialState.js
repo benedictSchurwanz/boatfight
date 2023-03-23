@@ -54,12 +54,12 @@ const initialState = {
     gameOver: false,
   },
   players: {
-    1: {
+    "1": {
       name: "Player 1",
       board: createBoard(),
       fleet: createFleet(fleet_type),
     },
-    2: {
+    "2": {
       name: "Player 2",
       board: createBoard(),
       fleet: createFleet(fleet_type),
