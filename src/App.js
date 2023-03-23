@@ -18,8 +18,6 @@ export default function App() {
   const [game, setGame] = useState(initialState.game);
   const [players, setPlayers] = useState(initialState.players);
 	
-	// console.log(game.current)
-	
   return (
     <GameContext.Provider value={{ game, setGame }}>
       <PlayersContext.Provider value={{ players, setPlayers }}>
