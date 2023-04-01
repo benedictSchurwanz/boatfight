@@ -1,0 +1,10 @@
+export const EMPTY = "EMPTY";
+export const HIT = "HIT";
+export const MISS = "MISS";
+export const OPEN = "OPEN";
+export const HORIZONTAL = "HORIZONTAL";
+export const VERTICAL = "VERTICAL";
+export const ROW = "row";
+export const COL = "col";
+export const SUCCESS = "SUCCESS";
+export const FAILURE = "FAILURE";

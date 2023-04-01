@@ -1,7 +1,7 @@
 import { fleet_type } from "../game-settings";
 
 // CONSTANTS
-import { EMPTY, OPEN } from "./constants";
+import { EMPTY, OPEN } from "../helpers/constants.js";
 
 const createEmptyCell = () => {
   return {

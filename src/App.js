@@ -6,8 +6,8 @@ import { AppContainer, Title } from "./styles";
 import { CssBaseline } from "@mui/material";
 import "./styles/app.css";
 // React Components
-import LandingPage from "./components/LandingPage";
-import Game from "./components/Game";
+import LandingPage from "./view-components/LandingPage";
+import Game from "./view-components/Game";
 // state
 import initialState from "./state/initialState";
 import { GameContext, PlayersContext } from "./state/contexts";
