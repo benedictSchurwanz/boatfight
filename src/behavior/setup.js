@@ -1,6 +1,6 @@
 import { ROW, COL } from "../helpers/constants.js"
 
-const getCell = () => {
+const getCellAt = () => {
 	
 }
 
@@ -17,11 +17,11 @@ const pickACell = (boardGridArrays, row, col) => {
 // try to be simple, but get it done,
 // revise it later.
 
-Supporting Functions:
-will the boat fit
+SupportingFunctions = 
+theBoatWillFit
 	thereIsEnoughSpace
-	are there boats in the way
-put the boat in
+	boatsAreInTheWay
+putTheBoatInPlace
 
 // go ahead and repeat your code,
 // DRY it later
@@ -30,19 +30,16 @@ const thereIsEnoughSpace = (length, position, direction) => {
 	return ((length + position) < 10)
 }
 
-const boatsInTheWay = (length, direction, grid) => {
-	
-}
-
-const getCells = () => {
+const boatsAreInTheWay = (length, direction, grid) => {
 	
 }
 
 const theProposedLocationOfThisBoat = () => {
-	are there boats in the way?
 	get the string of cells where the boat would go, so we can check for boats in the cell
 	check the given location for boats
+	are there boats in the way?
 }
+
 
 export const placeOneBoat = (boat, grid, direction, row, col) => {
 	// grid at row, col is target
