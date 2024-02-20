@@ -1,5 +1,5 @@
 import { Stack, Box } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
 import { BoardContainer } from "../../styles";
 
@@ -33,11 +33,11 @@ const Board = () => {
   );
 };
 
-const ColumnLabels = ({letters}) => {
+const ColumnLabels = ({ letters }) => {
 	// Make the first row into column labels
 	const labelsRow = []
 	
-	for (let i = 0; i <= 10; i++) {
+	for (let i = -1; i < 10; i++) {
     labelsRow.push(<Cell row={0} col={i} content={letters.shift()} />);
   }
 	
@@ -60,7 +60,7 @@ const ColumnLabels = ({letters}) => {
 const ColumnOfRows = () => { // creates the outer array of the 2x2 matrix, and the row arrays
   const output = [];
 
-  for (let i = 1; i <= 10; i++) {
+  for (let i = 0; i < 10; i++) {
     output.push(<Row rowNum={i} />); // creates an array for each row, adds it to outer array
   }
 	
@@ -89,7 +89,7 @@ const Row = ({ rowNum }) => {
 const createRowOfBoxes = ({ rowNum }) => {
   const rowOfBoxes = [];
 	
-	rowOfBoxes.push(<Cell row={rowNum} col={-1} content={rowNum} />)
+	rowOfBoxes.push(<Cell row={rowNum} col={-1} content={rowNum+1} />)
 	
   for (let i = 0; i < 10; i++) {
     rowOfBoxes.push(<Cell row={rowNum} col={i} />);
@@ -98,7 +98,11 @@ const createRowOfBoxes = ({ rowNum }) => {
   return rowOfBoxes;
 };
 
-const Cell = ({ row, col, content }) => {
+const Cell = (props) => {
+	const [row, setRow] = useState(props.row)
+	const [col, setCol] = useState(props.col)
+	const [content, setContent] = useState(props.content)
+	
   return (
     <Box
       sx={{
