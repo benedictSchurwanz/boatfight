@@ -4,7 +4,7 @@ import React from "react";
 import { BoardContainer } from "../../styles";
 
 const Board = () => {
-  const columnlabels = Array.from(" ABCDEFGHIJ");
+  const columnlabelletters = Array.from(" ABCDEFGHIJ");
 
   return (
     <BoardContainer>
@@ -25,7 +25,7 @@ const Board = () => {
             height: 1,
           }}
         >
-					<ColumnLabels />
+					<ColumnLabels letters={columnlabelletters} />
           <ColumnOfRows />
         </Stack>
       </Box>
@@ -33,19 +33,37 @@ const Board = () => {
   );
 };
 
-const ColumnLabels = () => {
+const ColumnLabels = ({letters}) => {
+	// Make the first row into column labels
+	const labelsRow = []
 	
+	for (let i = 0; i <= 10; i++) {
+    labelsRow.push(<Cell row={0} col={i} content={letters.shift()} />);
+  }
+	
+	return (    
+		<Stack
+			direction="row"
+			alignItems="stretch"
+			justifyContent="space-evenly"
+			sx={{
+				width: 1,
+				height: 1,
+				borderBottom: "1px solid black",
+			}}
+		>
+			{labelsRow}
+		</Stack>
+	);
 }
 
-const ColumnOfRows = () => { // creates the outer array of the 2x2 matrix
+const ColumnOfRows = () => { // creates the outer array of the 2x2 matrix, and the row arrays
   const output = [];
-	// Make the first row into column labels
-	
-	
+
   for (let i = 1; i <= 10; i++) {
     output.push(<Row rowNum={i} />); // creates an array for each row, adds it to outer array
   }
-
+	
   return output;
 };
 
