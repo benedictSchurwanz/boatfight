@@ -1,6 +1,7 @@
 const alphabetlc = "abcdefghijklmnopqrstuvwxyz";
 const alphabetCap = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
+// lower case
 export const nextletterlc = (letter) => {
   if (letter !== "z" && alphabetlc.includes(letter)) {
     const index = alphabetlc.indexOf(letter);
@@ -10,6 +11,7 @@ export const nextletterlc = (letter) => {
   }
 };
 
+// Capital letters
 export const nextletterCap = (letter) => {
   if (letter !== "Z" && alphabetCap.includes(letter)) {
     const index = alphabetCap.indexOf(letter);
@@ -19,6 +21,7 @@ export const nextletterCap = (letter) => {
   }
 };
 
+// number range, exclusive of end
 export const numberRangeExc = (start, end) => {
 	if (!Number.isInteger(start) || !Number.isInteger(end)) {
 		return undefined;
@@ -33,6 +36,7 @@ export const numberRangeExc = (start, end) => {
 	return output;
 }
 
+// number range, inclusive of end
 export const numberRange = (start, end) => {
 	if (!Number.isInteger(start) || !Number.isInteger(end)) {
 		return undefined;
@@ -47,6 +51,7 @@ export const numberRange = (start, end) => {
 	return output;
 }
 
+// capitals
 export const letterRangeCap = (start, end) => {
 	if (!alphabetCap.includes(start) || !alphabetCap.includes(end) || (start > end)) {
 		return undefined;
@@ -61,6 +66,7 @@ export const letterRangeCap = (start, end) => {
 	return output;
 }
 
+// lower case
 export const letterRangelc = (start, end) => {
 	if (!alphabetlc.includes(start) || !alphabetlc.includes(end) || (start > end)) {
 		return undefined;
