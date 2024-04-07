@@ -1,11 +1,10 @@
 import { Stack, Box } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
 
-import { BoardContainer, GridContainer } from "../../styles";
+import { BoardContainer } from "../../styles";
 
 const Board = () => {
-  const columnlabels = Array.from("ABCDEFGHIJ");
-  const rowlabels = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+  const columnlabelletters = Array.from(" ABCDEFGHIJ");
 
   return (
     <BoardContainer>
@@ -26,6 +25,7 @@ const Board = () => {
             height: 1,
           }}
         >
+					<ColumnLabels letters={columnlabelletters} />
           <ColumnOfRows />
         </Stack>
       </Box>
@@ -33,18 +33,42 @@ const Board = () => {
   );
 };
 
-const ColumnOfRows = () => {
+const ColumnLabels = ({ letters }) => {
+	// Make the first row into column labels
+	const labelsRow = []
+	
+	for (let i = -1; i < 10; i++) {
+    labelsRow.push(<Cell row={0} col={i} content={letters.shift()} />);
+  }
+	
+	return (    
+		<Stack
+			direction="row"
+			alignItems="stretch"
+			justifyContent="space-evenly"
+			sx={{
+				width: 1,
+				height: 1,
+				borderBottom: "1px solid black",
+			}}
+		>
+			{labelsRow}
+		</Stack>
+	);
+}
+
+const ColumnOfRows = () => { // creates the outer array of the 2x2 matrix, and the row arrays
   const output = [];
 
   for (let i = 0; i < 10; i++) {
-    output.push(<Row rowNum={i} />);
+    output.push(<Row rowNum={i} />); // creates an array for each row, adds it to outer array
   }
-
+	
   return output;
 };
 
 const Row = ({ rowNum }) => {
-  const row = createBoxRow({ rowNum });
+  const row = createRowOfBoxes({ rowNum });
 
   return (
     <Stack
@@ -62,17 +86,23 @@ const Row = ({ rowNum }) => {
   );
 };
 
-const createBoxRow = ({ rowNum }) => {
-  const boxrow = [];
-
+const createRowOfBoxes = ({ rowNum }) => {
+  const rowOfBoxes = [];
+	
+	rowOfBoxes.push(<Cell row={rowNum} col={-1} content={rowNum+1} />)
+	
   for (let i = 0; i < 10; i++) {
-    boxrow.push(<Cell row={rowNum} col={i} />);
+    rowOfBoxes.push(<Cell row={rowNum} col={i} />);
   }
 
-  return boxrow;
+  return rowOfBoxes;
 };
 
-const Cell = ({ row, col, content }) => {
+const Cell = (props) => {
+	const [row, setRow] = useState(props.row)
+	const [col, setCol] = useState(props.col)
+	const [content, setContent] = useState(props.content)
+	
   return (
     <Box
       sx={{

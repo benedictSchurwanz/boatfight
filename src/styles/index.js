@@ -40,29 +40,31 @@ export const GameContainer = styled.div`
 
 
 export const BoardContainer = styled.div`
-  // border: 2px solid white; 
+  // border: 2px solid red; 
 
   background-color: lightblue;
   border-radius: 1rem;
   width: 59vw;
 
   display: flex;
+	flex-direction: row;
 	
-	padding: 2rem 1rem 1rem 2rem;
+	padding: 1rem 1rem 1rem 1rem;
 `;
 
-export const GridContainer = styled.div`
-  border: 2px solid blue; 
+// not being used currently: 
+// export const GridContainer = styled.div`
+//  // border: 2px solid blue; 
 	
-  width: 100%;
+//  width: 100%;
   
-	display: flex;
-	// flex-direction: column;
-	// align-items: stretch; 
+// 	display: flex;
+// 	// flex-direction: column;
+// 	// align-items: stretch; 
 	
-	margin: 0;
-	padding: 0;
-`;
+// 	margin: 0;
+// 	padding: 0;
+// `;
 
 export const Cell = styled.div`
   // border: 1px solid gray; 

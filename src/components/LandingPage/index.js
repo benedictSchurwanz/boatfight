@@ -6,7 +6,7 @@ import Button from "@mui/material/Button";
 
 const LandingPage = () => {
 	const clickHandler = () => {
-		console.log("I've been clicked")
+		console.log("Start Game button has been clicked")
 	}
 	
   return (
