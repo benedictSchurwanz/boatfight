@@ -22,9 +22,9 @@ const createEmptyRow = () => {
 };
 
 const createBoard = () => {
-  // Create an array with 10 copies of
-  // an array with 10 copies of
-  // this object: { boat: EMPTY, shot: OPEN }
+  // Create an array with 10 arrays,
+  // each with 10 empty cell objects: 
+	// { boat: EMPTY, shot: OPEN }
 
   // empty array, length: 10
   const gridContainer = Array(10);
