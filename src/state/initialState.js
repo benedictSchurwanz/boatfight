@@ -1,4 +1,29 @@
 import { fleet_type } from "../game-settings";
+ 
+/* State structure:
+The boats are in cells on the board, but we also need to know how many boats, and the health and status of each boat. 
+The player has the collection of boats, which have statuses. 
+The boat can contain the coordinates of each position it occupies on the board.
+The Cell can know what boat it contains, and the status - open, hit, miss.
+
+The database can be interconnected. 
+When an operation is performed, all relevant state locations must be updated. This should be done in reducers, to protect state changes. 
+
+- [ ] Draw the database tables,
+- [ ] Change to Redux?
+- [ ] create the reducers...?
+
+Player
+	- Fleet 
+		- Boats
+			- locations array, status (afloat, sunk), health
+	- Board
+		- Cell
+			- contents: a pointer to the Boat, or empty
+			- shot status: open, hit, miss
+
+*/
+
 
 // CONSTANTS
 export const EMPTY = "EMPTY";
