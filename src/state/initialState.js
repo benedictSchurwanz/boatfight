@@ -25,11 +25,15 @@ Player
 */
 
 
-// CONSTANTS
+//  CONSTANTS  //
+
 export const EMPTY = "EMPTY";
 export const HIT = "HIT";
 export const MISS = "MISS";
 export const OPEN = "OPEN";
+
+
+//  CREATE A CELL  //
 
 const createEmptyCell = () => {
   return {
@@ -38,8 +42,11 @@ const createEmptyCell = () => {
   };
 };
 
-// row of 10 "emptyCell"s
+
+//  CREATE THE BOARD  //
+
 const createEmptyRow = () => {
+	// row of 10 "emptyCell"s
   return Array.from(
     Array(10), // create an empty array
     () => createEmptyCell() // fill each spot with an empty cell
@@ -60,6 +67,9 @@ const createBoard = () => {
   return grid;
 };
 
+
+//  CREATE THE BOATS  //
+
 const createBoat = (name, size) => {
   return {
     name: name,
@@ -73,6 +83,9 @@ const createFleet = (fleet_type) => {
     return createBoat(boat.name, boat.size);
   });
 };
+
+
+//  INITIAL STATE  //
 
 const initialState = {
   game: {
