@@ -1,5 +1,5 @@
 // Dependencies
-import React, { createContext, useEffect, useState } from "react";
+import React, { useState } from "react";
 import { Routes, Route } from "react-router";
 // Styles
 import { AppContainer, Title } from "./styles";
@@ -17,6 +17,8 @@ export default function App() {
   const [players, setPlayers] = useState(initialState.players);
 
 	console.log("initialState", initialState)
+	console.log("game: ", game)
+	console.log("players: ", players)
 	
   return (
     <GameContext.Provider value={{ game, setGame }}>
