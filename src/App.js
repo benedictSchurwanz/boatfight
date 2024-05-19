@@ -22,7 +22,7 @@ export default function App() {
   console.log("state from playersContext", players);
   console.log("player 1, board [0,0]", player1.board[0][0]);
 	console.log("get cell", board.get_cell(player1.board, [1,1]))
-	console.log("is cell empty", board.cell_empty(player1.board, [1,1]))
+	console.log("is cell empty", board.cell_is_empty(player1.board, [1,1]))
 
   return (
     <AppContainer>
