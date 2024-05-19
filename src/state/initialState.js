@@ -6,12 +6,11 @@ The player has the collection of boats, which have statuses.
 The boat can contain the coordinates of each position it occupies on the board.
 The Cell can know what boat it contains, and the status - open, hit, miss.
 
-The database can be interconnected. 
+The database can be interconnected as relational database tables. 
 When an operation is performed, all relevant state locations must be updated. This should be done in reducers, to protect state changes. 
 
 - [ ] Draw the database tables,
-- [ ] Change to Redux?
-- [ ] create the reducers...?
+- [ ] create the reducers
 
 Player
 	- Fleet 

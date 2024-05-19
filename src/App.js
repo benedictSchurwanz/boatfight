@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useState } from "react";
+import React, { useReducer } from "react";
 import { Routes, Route } from "react-router";
 // Styles
 import { AppContainer, Title } from "./styles";
@@ -11,10 +11,11 @@ import Game from "./components/Game";
 // state
 import initialState from "./state/initialState";
 import { GameContext, PlayersContext } from "./state/contexts";
+import { gameReducer, playersReducer } from "./state/reducers";
 
 export default function App() {
-  const [game, setGame] = useState(initialState.game);
-  const [players, setPlayers] = useState(initialState.players);
+  const [game, setGame] = useReducer(gameReducer, initialState.game);
+  const [players, setPlayers] = useReducer(playersReducer, initialState.players);
 
 	console.log("initialState", initialState)
 	console.log("game: ", game)
