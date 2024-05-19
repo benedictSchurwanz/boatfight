@@ -10,7 +10,7 @@ The database can be interconnected as relational database tables.
 When an operation is performed, all relevant state locations must be updated. This should be done in reducers, to protect state changes. 
 
 - [ ] Draw the database tables,
-- [ ] create the reducers
+- [x] create the reducers
 
 Player
 	- Fleet 
@@ -19,7 +19,7 @@ Player
 	- Board
 		- Cell
 			- contents: a pointer to the Boat, or empty
-			- shot status: open, hit, miss
+			- status status: open, hit, miss
 
 */
 
@@ -37,7 +37,7 @@ export const OPEN = "OPEN";
 const createEmptyCell = () => {
   return {
     boat: EMPTY,
-    shot: OPEN,
+    status: OPEN,
   };
 };
 
@@ -55,7 +55,7 @@ const createEmptyRow = () => {
 const createBoard = () => {
   // Create an array with 10 arrays,
   // each with 10 empty cell objects: 
-	// { boat: EMPTY, shot: OPEN }
+	// { boat: EMPTY, status: OPEN }
 
   // empty array, length: 10
   const gridContainer = Array(10);
