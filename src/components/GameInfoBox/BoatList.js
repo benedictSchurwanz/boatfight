@@ -3,9 +3,9 @@ import { GameContext, PlayersContext } from "../../state/contexts";
 import { BoatListUL } from "../../styles";
 
 const BoatList = () => {
-	const { game } = useContext(GameContext)
+	const { state: game, dispatch: gameDispatch } = useContext(GameContext)
 	const { currentPlayer } = game;
-  const { players } = useContext(PlayersContext);
+  const { state: players, dispatch: playersDispatch } = useContext(PlayersContext);
 	const player = players[currentPlayer]
   const fleet = player.fleet
 

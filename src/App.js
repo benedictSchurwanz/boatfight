@@ -1,5 +1,5 @@
 // Dependencies
-import React, { useReducer } from "react";
+import React, {  } from "react";
 import { Routes, Route } from "react-router";
 // Styles
 import { AppContainer, Title } from "./styles";
@@ -9,21 +9,16 @@ import "./styles/app.css";
 import LandingPage from "./components/LandingPage";
 import Game from "./components/Game";
 // state
-import initialState from "./state/initialState";
-import { GameContext, PlayersContext } from "./state/contexts";
-import { gameReducer, playersReducer } from "./state/reducers";
+import { GameProvider, PlayersProvider } from "./state/contexts";
 
 export default function App() {
-  const [game, setGame] = useReducer(gameReducer, initialState.game);
-  const [players, setPlayers] = useReducer(playersReducer, initialState.players);
-
-	console.log("initialState", initialState)
-	console.log("game: ", game)
-	console.log("players: ", players)
+	// console.log("initialState", initialState)
+	// console.log("game: ", game)
+	// console.log("players: ", players)
 	
   return (
-    <GameContext.Provider value={{ game, setGame }}>
-      <PlayersContext.Provider value={{ players, setPlayers }}>
+    <GameProvider>
+      <PlayersProvider>
         <CssBaseline />
         <AppContainer>
           <Title>BoatFight!</Title>
@@ -32,7 +27,7 @@ export default function App() {
             <Route path="/game" element={<Game />} />
           </Routes>
         </AppContainer>
-      </PlayersContext.Provider>
-    </GameContext.Provider>
+      </PlayersProvider>
+    </GameProvider>
   );
 }
