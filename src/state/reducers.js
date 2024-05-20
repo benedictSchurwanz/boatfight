@@ -11,3 +11,10 @@ export const playersReducer = (state, action) => {
 			return state;		
 	}	
 }
+
+export const boardReducer = (state, action) => {
+	switch (action.type) {
+		default: 
+			return state;		
+	}	
+}

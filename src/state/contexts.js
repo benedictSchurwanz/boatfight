@@ -1,12 +1,13 @@
 import { createContext, useReducer } from "react";
 import initialState from "./initialState";
-import { gameReducer, playersReducer } from "./reducers";
+import { gameReducer, playersReducer, boardReducer } from "./reducers";
 
 export const GameContext = createContext({})
 export const PlayersContext = createContext({
 	1: {},
 	2: {},
 })
+export const BoardContext = createContext({})
 
 export const GameProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(gameReducer, initialState.game)
@@ -25,5 +26,15 @@ export const PlayersProvider = ({ children }) => {
 		<PlayersContext.Provider value={{ state, dispatch }}>
 			{children}
 		</PlayersContext.Provider>
+	)
+}
+
+export const BoardProvider = ({ children }) => {
+	const [state, dispatch] = useReducer(boardReducer, {})
+	
+	return (
+		<BoardContext.Provider value={{ state, dispatch }}>
+			{children}
+		</BoardContext.Provider>
 	)
 }

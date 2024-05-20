@@ -1,7 +1,8 @@
 import { Stack, Box } from "@mui/material";
-import React, { useState } from "react";
-
-import { BoardContainer } from "../../styles";
+import React, { useState, useContext } from "react";
+import { GameContext, PlayersContext, BoardContext } from "../../state/contexts";
+import { BoardContainer } from "../../styles/index";
+import * as muiStyles from "../../styles/muiStyles"
 
 const Board = () => {
   const columnlabelletters = Array.from(" ABCDEFGHIJ");
