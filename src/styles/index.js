@@ -96,8 +96,8 @@ export const GameInfoHeader = styled.h2`
 
   color: slategray;
 	font-family: monospace;
-  font-size: 1.25rem;
-	text-decoration: underline;
+  font-size: 1.1rem;
+	// text-decoration: underline;
 	
 	margin: 0;
 	padding: 0.5rem 1.5rem 0;
