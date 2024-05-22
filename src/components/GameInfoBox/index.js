@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import { GameInfoContainer, GameInfoHeader } from "../../styles";
 import BoatList from "./BoatList";
 import TargetInputForm from "./TargetInputForm";
-import { msgPlaceBoats } from "../../state/initialState";
+import { SetupContext } from "../../state/contexts";
 
 const GameInfoBox = () => {
+	const {state: setup} = useContext(SetupContext)
+	
   return (
     <GameInfoContainer>
-      <GameInfoHeader>Your Fleet: {msgPlaceBoats && "Place your boats"}</GameInfoHeader>
+      <GameInfoHeader>Your Fleet: {setup.msgPlaceBoats && "Place your boats"}</GameInfoHeader>
       <BoatList />
       <TargetInputForm />
     </GameInfoContainer>

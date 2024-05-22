@@ -30,6 +30,7 @@ export const EMPTY = "EMPTY";
 export const HIT = "HIT";
 export const MISS = "MISS";
 export const OPEN = "OPEN";
+export const msgPlaceBoats = true;
 
 
 //  CREATE A CELL  //
@@ -104,6 +105,9 @@ const initialState = {
       fleet: createFleet(fleet_type),
     },
   },
+	setup: {
+		msgPlaceBoats: false,
+	}
 };
 
 export default initialState;
