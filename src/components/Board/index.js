@@ -1,33 +1,27 @@
 import { Stack, Box } from "@mui/material";
 import React, { useState, useContext } from "react";
-import { GameContext, PlayersContext, BoardContext } from "../../state/contexts";
+import {
+  GameContext,
+  PlayersContext,
+  BoardContext,
+} from "../../state/contexts";
 import { BoardContainer } from "../../styles/index";
-import * as muiStyles from "../../styles/muiStyles"
+import * as muiStyles from "../../styles/muiStyles";
 
 const Board = () => {
-  const columnlabelletters = Array.from(" ABCDEFGHIJ");
+  const column_label_letters = Array.from(" ABCDEFGHIJ");
 
   return (
     <BoardContainer>
-      <Box
-				sx={{
-					border: "2px solid blue",
-					width: 1,
-					margin: 0,
-					padding: 0
-				}}
-			>
+      <Box sx={{ border: "2px solid blue", width: 1, margin: 0, padding: 0 }}>
         <Stack
           direction="column"
           alignItems="stretch"
           justifyContent="center"
-          sx={{
-            width: 1,
-            height: 1,
-          }}
+          sx={{ width: 1, height: 1 }}
         >
-					<ColumnLabels letters={columnlabelletters} />
-          <ColumnOfRows />
+          <ColumnLabels letters={column_label_letters} />
+          <RowsContainer />
         </Stack>
       </Box>
     </BoardContainer>
@@ -35,19 +29,19 @@ const Board = () => {
 };
 
 const Cell = (props) => {
-	const [row, setRow] = useState(props.row)
-	const [col, setCol] = useState(props.col)
-	const [content, setContent] = useState(props.content)
-	
+  const [row, setRow] = useState(props.row);
+  const [col, setCol] = useState(props.col);
+  const [content, setContent] = useState(props.content);
+
   return (
     <Box
       sx={{
         width: 1,
         height: 1,
         border: "1px solid black",
-				borderTop: 0,
-				borderLeft: 0,
-				borderBottom: 0,
+        borderTop: 0,
+        borderLeft: 0,
+        borderBottom: 0,
         textAlign: "center",
       }}
     >
@@ -57,34 +51,34 @@ const Cell = (props) => {
 };
 
 const ColumnLabels = ({ letters }) => {
-	// Make the first row into column labels
-	const labelsRow = []
-	
-	for (let i = -1; i < 10; i++) {
-    labelsRow.push(<Cell key={"0" + i} row={0} col={i} content={letters.shift()} />);
-  }
-	
-	return (    
-		<Stack
-			direction="row"
-			alignItems="stretch"
-			justifyContent="space-evenly"
-			sx={{
-				width: 1,
-				height: 1,
-				borderBottom: "1px solid black",
-			}}
-		>
-			{labelsRow}
-		</Stack>
-	);
-}
+  // Make the first row into column labels
+  const labelsRow = [];
 
-const createRowOfBoxes = ({ rowNum }) => {
+  for (let i = -1; i < 10; i++) {
+    labelsRow.push(
+      <Cell key={"0" + i} row={0} col={i} content={letters.shift()} />
+    );
+  }
+
+  return (
+    <Stack
+      direction="row"
+      alignItems="stretch"
+      justifyContent="space-evenly"
+      sx={{ width: 1, height: 1, borderBottom: "1px solid black" }}
+    >
+      {labelsRow}
+    </Stack>
+  );
+};
+
+const createRow = ({ rowNum }) => {
   const rowOfBoxes = [];
-	
-	rowOfBoxes.push(<Cell key={`$rowNum` + `-1`} row={rowNum} col={-1} content={rowNum+1} />)
-	
+
+  rowOfBoxes.push(
+    <Cell key={`$rowNum` + `-1`} row={rowNum} col={-1} content={rowNum + 1} />
+  );
+
   for (let i = 0; i < 10; i++) {
     rowOfBoxes.push(<Cell key={`$rowNum` + i} row={rowNum} col={i} />);
   }
@@ -93,31 +87,28 @@ const createRowOfBoxes = ({ rowNum }) => {
 };
 
 const Row = ({ rowNum }) => {
-  const row = createRowOfBoxes({ rowNum });
+  const row = createRow({ rowNum });
 
   return (
     <Stack
       direction="row"
       alignItems="stretch"
       justifyContent="space-evenly"
-      sx={{
-				width: 1,
-				height: 1,
-				borderBottom: "1px solid black",
-      }}
+      sx={{ width: 1, height: 1, borderBottom: "1px solid black" }}
     >
       {row}
     </Stack>
   );
 };
 
-const ColumnOfRows = () => { // creates the outer array of the 2x2 matrix, and the row arrays
+const RowsContainer = () => {
+  // creates the outer array of the 2x2 matrix, and the row arrays
   const output = [];
 
   for (let i = 0; i < 10; i++) {
     output.push(<Row key={i} rowNum={i} />); // creates an array for each row, adds it to outer array
   }
-	
+
   return output;
 };
 
