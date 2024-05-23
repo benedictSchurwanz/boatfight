@@ -12,7 +12,6 @@ const LandingPage = () => {
 	
   const useStartGameButton = () => {
 		console.log("Start Game button has been clicked");
-		console.log("Load boat placement");
 		
 		useGameSetup(dispatch)
   };
