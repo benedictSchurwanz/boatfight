@@ -2,13 +2,13 @@ import { createContext, useReducer } from "react";
 import initialState from "./initialState";
 import { gameReducer, playersReducer, boardReducer, setupReducer } from "./reducers";
 
-export const GameContext = createContext({})
+export const GameContext = createContext()
 export const PlayersContext = createContext({
 	1: {},
 	2: {},
 })
-export const BoardContext = createContext({})
-export const SetupContext = createContext({})
+export const BoardContext = createContext()
+export const SetupContext = createContext()
 
 export const GameProvider = ({ children }) => {
 	const [state, dispatch] = useReducer(gameReducer, initialState.game)

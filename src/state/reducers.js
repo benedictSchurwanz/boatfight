@@ -1,4 +1,3 @@
-import React from "react";
 import { PLACE_BOATS } from "./constants";
 
 export const gameReducer = (state, action) => {
