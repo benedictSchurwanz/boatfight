@@ -94,7 +94,7 @@ export const GameInfoContainer = styled.div`
 export const GameInfoHeader = styled.h2`
   // border: 1px solid gray; 
 
-  color: slategray;
+  color: white;
 	font-family: monospace;
   font-size: 1.1rem;
 	// text-decoration: underline;
