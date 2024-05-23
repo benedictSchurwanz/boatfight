@@ -107,6 +107,7 @@ const initialState = {
   },
 	setup: {
 		statusGameSetup: false,
+		placeBoatsMsg: false
 	}
 };
 

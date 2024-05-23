@@ -1,4 +1,4 @@
-import { STATUS_GAME_SETUP } from "./constants";
+import { PLACE_BOATS, STATUS_GAME_SETUP } from "./constants";
 
 export const gameReducer = (state, action) => {
 	switch (action.type) {
@@ -23,6 +23,13 @@ export const boardReducer = (state, action) => {
 
 export const setupReducer = (state, action) => {
 	switch (action.type) {
+		case PLACE_BOATS: {
+			return ({
+				...state,
+				placeBoatsMsg: true, 
+				placeBoatsGrayText: !state.placeBoatsGrayText
+			})
+		}
 		case STATUS_GAME_SETUP: 
 			return ({
 				...state,

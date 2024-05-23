@@ -5,3 +5,7 @@ a {
 li {
 	list-style-type: none;
 }
+
+.placeBoatsGrayText {
+	color: gray
+}
