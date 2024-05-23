@@ -9,7 +9,7 @@ const GameInfoBox = () => {
 	
   return (
     <GameInfoContainer>
-      <GameInfoHeader>Your Fleet: {setup.msgPlaceBoats && "Place your boats"}</GameInfoHeader>
+      <GameInfoHeader>Your Fleet: {setup.statusGameSetup && "Place your boats"}</GameInfoHeader>
       <BoatList />
       <TargetInputForm />
     </GameInfoContainer>

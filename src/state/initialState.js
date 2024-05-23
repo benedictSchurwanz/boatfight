@@ -30,7 +30,7 @@ export const EMPTY = "EMPTY";
 export const HIT = "HIT";
 export const MISS = "MISS";
 export const OPEN = "OPEN";
-export const msgPlaceBoats = true;
+export const statusGameSetup = true;
 
 
 //  CREATE A CELL  //
@@ -106,7 +106,7 @@ const initialState = {
     },
   },
 	setup: {
-		msgPlaceBoats: false,
+		statusGameSetup: false,
 	}
 };
 

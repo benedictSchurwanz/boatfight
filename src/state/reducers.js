@@ -1,4 +1,4 @@
-import { PLACE_BOATS } from "./constants";
+import { STATUS_GAME_SETUP } from "./constants";
 
 export const gameReducer = (state, action) => {
 	switch (action.type) {
@@ -23,10 +23,10 @@ export const boardReducer = (state, action) => {
 
 export const setupReducer = (state, action) => {
 	switch (action.type) {
-		case PLACE_BOATS: 
+		case STATUS_GAME_SETUP: 
 			return ({
 				...state,
-				msgPlaceBoats: true
+				statusGameSetup: true
 			})
 		default: 
 			return state;
