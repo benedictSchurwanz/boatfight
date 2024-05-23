@@ -27,7 +27,8 @@ export const setupReducer = (state, action) => {
 			return ({
 				...state,
 				placeBoatsMsg: true, 
-				placeBoatsGrayText: !state.placeBoatsGrayText
+				placeBoatsGrayText: !state.placeBoatsGrayText,
+				currentBoatBeingPlaced_index: 0
 			})
 		}
 		case STATUS_GAME_SETUP: 

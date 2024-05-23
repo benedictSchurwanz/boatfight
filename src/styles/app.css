@@ -9,3 +9,7 @@ li {
 .placeBoatsGrayText {
 	color: gray
 }
+
+#currentBoatBeingPlaced_id {
+	color: white
+}

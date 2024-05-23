@@ -12,10 +12,11 @@ const BoatList = () => {
 
   return (
     <BoatListUL>
-      {fleet.map((boat) => (
+      {fleet.map((boat, index) => (
         <li 
 					key={boat.name}
 					className={setup.placeBoatsGrayText ? "placeBoatsGrayText" : ""}
+					id={setup.currentBoatBeingPlaced_index == index ? "currentBoatBeingPlaced_id" : ""}
 				>
 					{boat.name}
 				</li>
