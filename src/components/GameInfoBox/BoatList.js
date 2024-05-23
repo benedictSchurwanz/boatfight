@@ -16,9 +16,9 @@ const BoatList = () => {
         <li 
 					key={boat.name}
 					className={setup.placeBoatsGrayText ? "placeBoatsGrayText" : ""}
-					id={setup.currentBoatBeingPlaced_index == index ? "currentBoatBeingPlaced_id" : ""}
+					id={setup.currentBoatIndex == index ? "currentBoatId" : ""}
 				>
-					{setup.currentBoatBeingPlaced_index == index ? "👉 " : ""}{boat.name}
+					{setup.currentBoatIndex == index ? "👉 " : ""}{boat.name}
 				</li>
       ))}
     </BoatListUL>
