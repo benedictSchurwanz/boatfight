@@ -10,6 +10,7 @@ import * as muiStyles from "../../styles/muiStyles";
 
 const Board = () => {
   const column_label_letters = Array.from(" ABCDEFGHIJ");
+	const {state, dispatch} = useContext(BoardContext)
 
   return (
     <BoardContainer>
@@ -29,23 +30,11 @@ const Board = () => {
 };
 
 const Cell = (props) => {
-  const [row, setRow] = useState(props.row);
-  const [col, setCol] = useState(props.col);
-  const [content, setContent] = useState(props.content);
-
   return (
     <Box
-      sx={{
-        width: 1,
-        height: 1,
-        border: "1px solid black",
-        borderTop: 0,
-        borderLeft: 0,
-        borderBottom: 0,
-        textAlign: "center",
-      }}
+      sx={{ width: 1, height: 1, border: "1px solid black", borderTop: 0, borderLeft: 0, borderBottom: 0, textAlign: "center" }}
     >
-      {content}
+      {""}
     </Box>
   );
 };
@@ -56,7 +45,7 @@ const ColumnLabels = ({ letters }) => {
 
   for (let i = -1; i < 10; i++) {
     labelsRow.push(
-      <Cell key={"0" + i} row={0} col={i} content={letters.shift()} />
+      <Cell key={"-1" + i} row={-1} col={i} content={letters.shift()} />
     );
   }
 
