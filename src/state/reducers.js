@@ -26,6 +26,7 @@ export const setupReducer = (state, action) => {
 		case PLACE_BOATS: {
 			return ({
 				...state,
+				status: true,
 				placeBoatsMsg: true, 
 				placeBoatsGrayText: !state.placeBoatsGrayText,
 				currentBoatIndex: 0

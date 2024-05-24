@@ -14,7 +14,9 @@ const initialBoardGrid = Array.from({ length: 10 }, (_, rowIndex) => Array.from(
 
 export {initialBoardGrid}
 
-/*  old Board setup:
+
+/* ====================== */
+/*    old Board setup:    /*
 
 //  CREATE A CELL  //
 

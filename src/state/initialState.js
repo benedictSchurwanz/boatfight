@@ -73,7 +73,7 @@ const initialState = {
     },
   },
 	setup: {
-		statusGameSetup: false,
+		status: false,
 		placeBoatsMsg: false
 	}
 };

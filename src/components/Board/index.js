@@ -4,13 +4,15 @@ import {
   GameContext,
   PlayersContext,
   BoardContext,
+  SetupContext,
 } from "../../state/contexts";
 import { BoardContainer } from "../../styles/index";
 import * as muiStyles from "../../styles/muiStyles";
 
 const Board = () => {
-  const column_label_letters = Array.from(" ABCDEFGHIJ");
-	const {state, dispatch} = useContext(BoardContext)
+  const column_label_letters = Array.from("🚢ABCDEFGHIJ");
+  const { state: boardState, dispatch: boardDispatch } =
+    useContext(BoardContext);
 
   return (
     <BoardContainer>
@@ -29,12 +31,26 @@ const Board = () => {
   );
 };
 
-const Cell = (props) => {
+const Cell = ({content}) => {
+  const { state: setupState } = useContext(SetupContext);
+	// const content = props.content;
+  const clickHandler = () => {
+    if (setupState.status) {
+			console.log("a cell was clicked")
+    }
+  };
+
   return (
     <Box
-      sx={{ width: 1, height: 1, border: "1px solid black", borderTop: 0, borderLeft: 0, borderBottom: 0, textAlign: "center" }}
+      sx={{
+        width: 1,
+        height: 1,
+        borderRight: "1px solid black",
+        textAlign: "center",
+      }}
+      onClick={clickHandler}
     >
-      {""}
+      {content}
     </Box>
   );
 };
