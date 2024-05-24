@@ -1,6 +1,7 @@
 import { createContext, useReducer } from "react";
 import initialState from "./initialState";
 import { gameReducer, playersReducer, boardReducer, setupReducer } from "./reducers";
+import { initialBoardGrid } from "./initialBoardState";
 
 export const GameContext = createContext()
 export const PlayersContext = createContext({
@@ -31,7 +32,7 @@ export const PlayersProvider = ({ children }) => {
 }
 
 export const BoardProvider = ({ children }) => {
-	const [state, dispatch] = useReducer(boardReducer, {})
+	const [state, dispatch] = useReducer(boardReducer, initialBoardGrid)
 	
 	return (
 		<BoardContext.Provider value={{ state, dispatch }}>
