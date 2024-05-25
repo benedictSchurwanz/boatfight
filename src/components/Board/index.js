@@ -10,9 +10,13 @@ import { BoardContainer } from "../../styles/index";
 import * as muiStyles from "../../styles/muiStyles";
 
 const Board = () => {
-  const column_label_letters = Array.from("🚢ABCDEFGHIJ");
+  const column_label_letters = Array.from("💥ABCDEFGHIJ");
   const { state: boardState, dispatch: boardDispatch } =
     useContext(BoardContext);
+
+  const gridClickHandler = (clickedCell) => {
+    console.log("gridClickHandler was clicked");
+  };
 
   return (
     <BoardContainer>
@@ -24,19 +28,27 @@ const Board = () => {
           sx={{ width: 1, height: 1 }}
         >
           <ColumnLabels letters={column_label_letters} />
-          <RowsContainer />
+          <Grid
+          // onClick={() => gridClickHandler()}
+          // gridClickHandler={gridClickHandler}
+          />
         </Stack>
       </Box>
     </BoardContainer>
   );
 };
 
-const Cell = ({content}) => {
+const Cell = ({ row, col, content, gridClickHandler }) => {
   const { state: setupState } = useContext(SetupContext);
-	// const content = props.content;
-  const clickHandler = () => {
+  const [clicked, setClicked] = useState(false);
+  // const content = props.content;
+
+  const clickHandler = (event) => {
+    console.log(`Cell click handler: ${row},${col} was clicked`);
+
+    setClicked(!clicked);
+
     if (setupState.status) {
-			console.log("a cell was clicked")
     }
   };
 
@@ -47,6 +59,7 @@ const Cell = ({content}) => {
         height: 1,
         borderRight: "1px solid black",
         textAlign: "center",
+        backgroundColor: clicked ? "#e53935" : "transparent",
       }}
       onClick={clickHandler}
     >
@@ -77,22 +90,19 @@ const ColumnLabels = ({ letters }) => {
   );
 };
 
-const createRow = ({ rowNum }) => {
-  const rowOfBoxes = [];
+const Row = ({ rowNum }) => {
+  // const row = createRow({ rowNum });
+	const newRow = [];
 
-  rowOfBoxes.push(
+  // the first position has the row number label
+  newRow.push(
     <Cell key={`$rowNum` + `-1`} row={rowNum} col={-1} content={rowNum + 1} />
   );
 
+  // create the rest of the row
   for (let i = 0; i < 10; i++) {
-    rowOfBoxes.push(<Cell key={`$rowNum` + i} row={rowNum} col={i} />);
+    newRow.push(<Cell key={`$rowNum` + i} row={rowNum} col={i} />);
   }
-
-  return rowOfBoxes;
-};
-
-const Row = ({ rowNum }) => {
-  const row = createRow({ rowNum });
 
   return (
     <Stack
@@ -101,20 +111,25 @@ const Row = ({ rowNum }) => {
       justifyContent="space-evenly"
       sx={{ width: 1, height: 1, borderBottom: "1px solid black" }}
     >
-      {row}
+      {newRow}
     </Stack>
   );
 };
 
-const RowsContainer = () => {
-  // creates the outer array of the 2x2 matrix, and the row arrays
-  const output = [];
+const Grid = () => {
+  // the container for the rows
+  const rowsArray = [];
 
+  // creates each row, adds it to the container
   for (let i = 0; i < 10; i++) {
-    output.push(<Row key={i} rowNum={i} />); // creates an array for each row, adds it to outer array
+    rowsArray.push(<Row key={i} rowNum={i} />);
   }
 
-  return output;
+  return (
+		<Stack>
+			{rowsArray}
+		</Stack>
+	)
 };
 
 export default Board;

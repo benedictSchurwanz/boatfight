@@ -18,7 +18,7 @@ const LandingPage = () => {
 		useGameSetup(dispatch)
   };
 
-  return (
+  return ( 
     <Link to="/game">
       <Button variant="contained" onClick={useStartGameButton}>
         Start Game
