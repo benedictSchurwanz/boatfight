@@ -9,13 +9,20 @@ import {
 import { BoardContainer } from "../../styles/index";
 import * as muiStyles from "../../styles/muiStyles";
 
+
 const Board = () => {
   const column_label_letters = Array.from("💥ABCDEFGHIJ");
   const { state: boardState, dispatch: boardDispatch } =
     useContext(BoardContext);
+  const [activeCell, setActiveCell] = useState([-1,-1]);
 
-  const gridClickHandler = (clickedCell) => {
-    console.log("gridClickHandler was clicked");
+  const gridClickHandler = ({row, col}) => {
+    console.log(`gridClickHandler was clicked `, row, col, activeCell);
+    if (row == activeCell[0] && col == activeCell[1]) {
+      setActiveCell([]);
+    } else {
+      setActiveCell([row, col]);
+    }
   };
 
   return (
@@ -29,8 +36,8 @@ const Board = () => {
         >
           <ColumnLabels letters={column_label_letters} />
           <Grid
-          // onClick={() => gridClickHandler()}
-          // gridClickHandler={gridClickHandler}
+            gridClickHandler={gridClickHandler}
+            activeCell={activeCell}
           />
         </Stack>
       </Box>
@@ -38,13 +45,18 @@ const Board = () => {
   );
 };
 
-const Cell = ({ row, col, content, gridClickHandler }) => {
+const Cell = ({
+  row,
+  col,
+  content,
+  activeCell,
+  gridClickHandler,
+}) => {
   const { state: setupState } = useContext(SetupContext);
   const [clicked, setClicked] = useState(false);
-  // const content = props.content;
 
   const clickHandler = (event) => {
-    console.log(`Cell click handler: ${row},${col} was clicked`);
+    console.log(`Cell click handler: ${row + 1},${col + 1} was clicked`);
 
     setClicked(!clicked);
 
@@ -52,6 +64,8 @@ const Cell = ({ row, col, content, gridClickHandler }) => {
     }
   };
 
+	const match = (activeCell && row == activeCell[0] && col == activeCell[1])
+	
   return (
     <Box
       sx={{
@@ -59,9 +73,9 @@ const Cell = ({ row, col, content, gridClickHandler }) => {
         height: 1,
         borderRight: "1px solid black",
         textAlign: "center",
-        backgroundColor: clicked ? "#e53935" : "transparent",
+        backgroundColor: match ? "red" : "",
       }}
-      onClick={clickHandler}
+      onClick={() => gridClickHandler({row, col})}
     >
       {content}
     </Box>
@@ -90,9 +104,9 @@ const ColumnLabels = ({ letters }) => {
   );
 };
 
-const Row = ({ rowNum }) => {
+const Row = ({ rowNum, activeCell, gridClickHandler }) => {
   // const row = createRow({ rowNum });
-	const newRow = [];
+  const newRow = [];
 
   // the first position has the row number label
   newRow.push(
@@ -101,7 +115,15 @@ const Row = ({ rowNum }) => {
 
   // create the rest of the row
   for (let i = 0; i < 10; i++) {
-    newRow.push(<Cell key={`$rowNum` + i} row={rowNum} col={i} />);
+    newRow.push(
+      <Cell
+        key={`$rowNum` + i}
+        row={rowNum}
+        col={i}
+				activeCell={activeCell}
+        gridClickHandler={gridClickHandler}
+      />
+    );
   }
 
   return (
@@ -116,20 +138,18 @@ const Row = ({ rowNum }) => {
   );
 };
 
-const Grid = () => {
+const Grid = ({ gridClickHandler, activeCell }) => {
   // the container for the rows
   const rowsArray = [];
 
   // creates each row, adds it to the container
   for (let i = 0; i < 10; i++) {
-    rowsArray.push(<Row key={i} rowNum={i} />);
+    rowsArray.push(
+      <Row key={i} rowNum={i} activeCell={activeCell} gridClickHandler={gridClickHandler} />
+    );
   }
 
-  return (
-		<Stack>
-			{rowsArray}
-		</Stack>
-	)
+  return <Stack>{rowsArray}</Stack>;
 };
 
 export default Board;
