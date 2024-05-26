@@ -107,9 +107,10 @@ export const BoatListUL = styled.ul`
   // border: 1px solid gray; 
 
   border-bottom: 1px solid lightslategray;
+	margin-bottom: 1rem;
 
 	margin: 0;
-	padding: 0.5rem 2rem 0;
+	padding: 0rem 2rem 0.5rem;
 `;
 
 
