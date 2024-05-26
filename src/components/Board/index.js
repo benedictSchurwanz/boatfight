@@ -13,10 +13,10 @@ const Board = () => {
   const column_label_letters = Array.from("💥ABCDEFGHIJ");
   const { state: boardState, dispatch: boardDispatch } =
     useContext(BoardContext);
-  const [activeCell, setActiveCell] = useState([-1,-1]);
+  const [activeCell, setActiveCell] = useState([]);
 
-  const gridClickHandler = ({row, col}) => {
-    console.log(`gridClickHandler was clicked `, row, col, activeCell);
+  const gridClickHandler = ({ row, col }) => {
+    console.log(`gridClickHandler was clicked `, row, col, "  activeCell: ", activeCell);
     if (row == activeCell[0] && col == activeCell[1]) {
       setActiveCell([]);
     } else {
@@ -34,23 +34,14 @@ const Board = () => {
           sx={{ width: 1, height: 1 }}
         >
           <ColumnLabels letters={column_label_letters} />
-          <Grid
-            gridClickHandler={gridClickHandler}
-            activeCell={activeCell}
-          />
+          <Grid gridClickHandler={gridClickHandler} activeCell={activeCell} />
         </Stack>
       </Box>
     </BoardContainer>
   );
 };
 
-const Cell = ({
-  row,
-  col,
-  content,
-  activeCell,
-  gridClickHandler,
-}) => {
+const Cell = ({ row, col, content, activeCell, gridClickHandler }) => {
   const { state: setupState } = useContext(SetupContext);
   const [clicked, setClicked] = useState(false);
 
@@ -63,8 +54,8 @@ const Cell = ({
     }
   };
 
-	const match = (activeCell && row == activeCell[0] && col == activeCell[1])
-	
+  const match = activeCell && row == activeCell[0] && col == activeCell[1];
+
   return (
     <Box
       sx={{
@@ -74,7 +65,7 @@ const Cell = ({
         textAlign: "center",
         backgroundColor: match ? "red" : "",
       }}
-      onClick={() => gridClickHandler({row, col})}
+      onClick={() => gridClickHandler({ row, col })}
     >
       {content}
     </Box>
@@ -119,7 +110,7 @@ const Row = ({ rowNum, activeCell, gridClickHandler }) => {
         key={`$rowNum` + i}
         row={rowNum}
         col={i}
-				activeCell={activeCell}
+        activeCell={activeCell}
         gridClickHandler={gridClickHandler}
       />
     );
@@ -144,7 +135,12 @@ const Grid = ({ gridClickHandler, activeCell }) => {
   // creates each row, adds it to the container
   for (let i = 0; i < 10; i++) {
     rowsArray.push(
-      <Row key={i} rowNum={i} activeCell={activeCell} gridClickHandler={gridClickHandler} />
+      <Row
+        key={i}
+        rowNum={i}
+        activeCell={activeCell}
+        gridClickHandler={gridClickHandler}
+      />
     );
   }
 

@@ -1,4 +1,1 @@
-export const is_dead = () => {
-	// loop through fleet; is boat sunk? First boat that is not sunk, function returns false. Otherwise returns true.
-	return false;
-}
+// functions involving data from the Player context
