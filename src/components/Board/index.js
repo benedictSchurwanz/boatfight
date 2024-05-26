@@ -8,6 +8,7 @@ import {
 } from "../../state/contexts";
 import { BoardContainer } from "../../styles/index";
 import * as muiStyles from "../../styles/muiStyles";
+import { act } from "react";
 
 
 const Board = () => {
