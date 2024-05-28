@@ -5,20 +5,24 @@ import { Link } from "react-router-dom";
 import Button from "@mui/material/Button";
 // functions
 import { useGameSetup } from "../../functions/setup";
-import { BoardContext, SetupContext } from "../../state/contexts";
+import {
+  GameContext,
+  PlayersContext,
+  SetupContext,
+} from "../../state/contexts";
 
 const LandingPage = () => {
-	const {dispatch} = useContext(SetupContext)
-	const {state: boardstate} = useContext(BoardContext)
-	
+  const { dispatch: setupdispatch } = useContext(SetupContext);
+  const { state: gamestate } = useContext(GameContext);
+  const { state: playerstate } = useContext(PlayersContext);
+
   const useStartGameButton = () => {
-		console.log("Start Game button has been clicked");
-		console.log("board state", boardstate)	
-		
-		useGameSetup(dispatch)
+    console.log("Start Game button has been clicked");
+
+    useGameSetup({ gamestate, playerstate, setupdispatch });
   };
 
-  return ( 
+  return (
     <Link to="/game">
       <Button variant="contained" onClick={useStartGameButton}>
         Start Game
