@@ -1,4 +1,4 @@
-import { PLACE_BOATS, STATUS_GAME_SETUP } from "./constants";
+import { PLACE_BOATS_START, STATUS_GAME_SETUP } from "./constants";
 
 export const gameReducer = (state, action) => {
   switch (action.type) {
@@ -23,12 +23,17 @@ export const boardReducer = (state, action) => {
 
 export const setupReducer = (state, action) => {
   switch (action.type) {
-    case PLACE_BOATS: {
+    case PLACE_BOATS_START: {
+			const gamestate = action.payload.gamestate;
+			const playerstate = action.payload.playerstate;
+			const currentPlayer = playerstate[gamestate.currentPlayer]
+			
       return {
         ...state,
-        placeBoatsMsg: true,
-        placeBoatsGrayText: !state.placeBoatsGrayText,
-        currentBoatIndex: 0,
+				placeBoatsMsg: true,
+				placeBoatsGrayText: !state.placeBoatsGrayText,
+				currentBoatIndex: action.payload.boatIndex,
+				currentBoat: currentPlayer.fleet[action.payload.boatIndex]
       };
     }
     case STATUS_GAME_SETUP:

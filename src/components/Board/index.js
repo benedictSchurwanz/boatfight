@@ -1,22 +1,16 @@
 import { Stack, Box } from "@mui/material";
 import React, { useState, useContext } from "react";
-import {
-  GameContext,
-  PlayersContext,
-  BoardContext,
-  SetupContext,
-} from "../../state/contexts";
+import { SetupContext } from "../../state/contexts";
 import { BoardContainer } from "../../styles/index";
-import * as muiStyles from "../../styles/muiStyles";
 
 const Board = () => {
   const column_label_letters = Array.from("💥ABCDEFGHIJ");
-  const { state: boardState, dispatch: boardDispatch } =
-    useContext(BoardContext);
+  const { state: setupstate } = useContext(SetupContext);
   const [activeCell, setActiveCell] = useState([]);
 
   const gridClickHandler = ({ row, col }) => {
-    console.log(`gridClickHandler was clicked `, row, col, "  activeCell: ", activeCell);
+    console.log(`gridClickHandler`, row, col, " activeCell: ", activeCell);
+
     if (row == activeCell[0] && col == activeCell[1]) {
       setActiveCell([]);
     } else {

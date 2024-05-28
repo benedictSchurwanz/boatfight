@@ -1,3 +1,3 @@
 export const GAME_SETUP = "GAME_SETUP"
 export const STATUS_GAME_SETUP = "STATUS_GAME_SETUP"
-export const PLACE_BOATS = "PLACE_BOATS"
+export const PLACE_BOATS_START = "PLACE_BOATS_START"

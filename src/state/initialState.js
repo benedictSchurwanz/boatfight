@@ -26,14 +26,7 @@ Player
 
 //  CONSTANTS  //
 
-
 export const statusGameSetup = true;
-
-
-
-
-
-
 
 //  CREATE THE BOATS  //
 
@@ -42,6 +35,7 @@ const createBoat = (name, size) => {
     name: name,
     hp_max: size,
     hp_current: size,
+		length: size
   };
 };
 
@@ -73,7 +67,7 @@ const initialState = {
     },
   },
 	setup: {
-		status: false,
+		status: true,
 		placeBoatsMsg: false
 	}
 };
