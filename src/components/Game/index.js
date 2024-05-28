@@ -5,14 +5,16 @@ import Board from "../Board";
 import GameInfoBox from "../GameInfoBox";
 // Styles
 import { GameContainer } from "../../styles";
+import { GameSetup } from "../GameSetup";
 
-function Game() {
+const Game = () => {
   return (
     <GameContainer>
+			<GameSetup />
       <Board />
       <GameInfoBox />
     </GameContainer>
   );
-}
+};
 
 export default Game;
