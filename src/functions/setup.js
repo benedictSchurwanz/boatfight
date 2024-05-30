@@ -10,15 +10,21 @@ export const useGameSetup = ({gamestate, playerstate, setupdispatch}) => {
 	setupdispatch({type: PLACE_BOATS_START, payload: {gamestate, playerstate, boatIndex}})
 }
 
-export const place_a_boat = ({targetCell, orientation}) => {
-	const row = targetCell.row
-	const col = targetCell.col
+export const place_a_boat = ({activeCell, isHorizontal}) => {
+	const row = activeCell.row
+	const col = activeCell.col
 	
-	console.log("row", row, "col", col, "orientation", orientation)
+	console.log("row", row, "col", col, "isHorizontal", isHorizontal)
+	
+	let coordinate
+	(isHorizontal) ?	
+		coordinate = col : // for horizontal boats, we count columns
+		coordinate = row
+	
+	console.log(coordinate)
+	console.log(coordinate + 5 <= 10)
 }
 
-export const check_available_space = ({length, row, col, orientation, dispatch}) => {
-	let coordinate = row
-	console.log("coordinate", coordinate)
-		
+export const check_available_space = ({length, row, col, isHorizontal, dispatch}) => {
+	
 }

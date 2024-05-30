@@ -3,16 +3,17 @@ import React, { useState, useContext, useEffect } from "react";
 import { GameContext, PlayersContext, SetupContext } from "../../state/contexts";
 import { BoardContainer } from "../../styles/index";
 import { place_a_boat } from "../../functions/setup";
-import { HORIZONTAL, VERTICAL } from "../../state/constants";
 
 const Board = () => {
-  const column_label_letters = Array.from("💥ABCDEFGHIJ");
 	const { state: gamestate } = useContext(GameContext)
   const { state: playerstate } = useContext(PlayersContext);
 	const { state: setupstate } = useContext(SetupContext)
+	
   const [activeCell, setActiveCell] = useState({row: null, col: null});
+	const [isHorizontal, setIsHorizontal] = useState(true)
+	
+  const column_label_letters = Array.from("💥ABCDEFGHIJ");
   const currentBoat = setupstate.currentBoat;
-	const [orientation, setOrientation] = useState(HORIZONTAL)
 
   const gridClickHandler = ({ row, col }) => {
     console.log(`gridClickHandler`, row, col, " activeCell: ", activeCell);
@@ -23,10 +24,10 @@ const Board = () => {
       setActiveCell({row, col});
     }
 		
-		place_a_boat({targetCell: {row, col}, orientation})
+		place_a_boat({activeCell: {row, col}, isHorizontal})
 		
-		console.log("currentBoat (Board)", currentBoat)
-		console.log("placeBoatHighlightColor", setupstate.placeBoatHighlightColor)
+		// console.log("currentBoat (Board)", currentBoat)
+		// console.log("placeBoatHighlightColor", setupstate.placeBoatHighlightColor)
   };
 
   return (
@@ -50,28 +51,8 @@ const Cell = ({ row, col, content, activeCell, gridClickHandler }) => {
   const { state: setupstate, dispatch: setupdispatch } = useContext(SetupContext);
   const [clicked, setClicked] = useState(false);
 	
-  // const clickHandler = (event) => {
-  //   console.log(`Cell click handler: ${row + 1},${col + 1} was clicked`);
-
-  //   setClicked(!clicked);
-
-  //   if (setupstate.status) {
-  //   }
-  // };
-	
-	
 	const match = activeCell && row == activeCell.row && col == activeCell.col;
 	
-	// let targetCell = {row: "", col: ""}
-	// if (match) {
-	// 	let targetCell = {row: activeCell[0], col: activeCell[1]}
-	// } 
-	
-	// useEffect(() => {
-		// place_a_boat({targetCell: {row: row, col: col}, orientation: HORIZONTAL, boat: currentBoat, dispatch: setupdispatch})
-	// }, [])
-
-
   return (
     <Box
       sx={{
