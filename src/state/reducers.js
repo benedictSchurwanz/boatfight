@@ -1,4 +1,4 @@
-import { PLACE_BOATS_START, STATUS_GAME_SETUP } from "./constants";
+import { PLACE_BOATS_START, PLACE_BOAT_ILLEGAL, PLACE_BOAT_LEGAL, GAME_SETUP_START } from "./constants";
 
 export const gameReducer = (state, action) => {
   switch (action.type) {
@@ -36,10 +36,23 @@ export const setupReducer = (state, action) => {
 				currentBoat: currentPlayer.fleet[action.payload.boatIndex]
       };
     }
-    case STATUS_GAME_SETUP:
-      return {
-        ...state,
+		case PLACE_BOAT_LEGAL: {
+			return {
+				...state,
+				placeBoatHighlightColor: "green"
+			}
+		}
+		case PLACE_BOAT_ILLEGAL: {
+			return {
+				...state,
+				placeBoatHighlightColor: "red"
+			}
+		}
+    case GAME_SETUP_START:
+			return {
+				...state,
         status: true,
+				placeBoatHighlightColor: "red"
       };
     default:
       return state;
