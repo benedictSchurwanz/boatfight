@@ -3,9 +3,9 @@ import React from "react";
 // React Components
 import Board from "../Board";
 import GameInfoBox from "../GameInfoBox";
+import GameSetup from "../GameSetup";
 // Styles
 import { GameContainer } from "../../styles";
-import { GameSetup } from "../GameSetup";
 
 const Game = () => {
   return (
