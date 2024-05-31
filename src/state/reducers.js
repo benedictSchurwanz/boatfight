@@ -33,21 +33,22 @@ export const setupReducer = (state, action) => {
       return {
         ...state,
         status: true,
-        placeBoatHighlightColor: "red",
-        placeBoatIsHorizontal: true,
+				placeBoatIsHorizontal: true,
       };
     }
     case PLACE_BOATS_START: {
-      const gamestate = action.payload.gamestate;
+			const gamestate = action.payload.gamestate;
       const playerstate = action.payload.playerstate;
       const currentPlayer = playerstate[gamestate.currentPlayer];
-
+			
       return {
-        ...state,
+				...state,
         placeBoatsMsg: true,
         placeBoatsGrayText: !state.placeBoatsGrayText,
         currentBoatIndex: action.payload.boatIndex,
         currentBoat: currentPlayer.fleet[action.payload.boatIndex],
+				placeBoatHighlightColor: "red",
+				placeBoatIsHorizontal: true,
       };
     }
     case PLACE_BOAT_LEGAL: {
