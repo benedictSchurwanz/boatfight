@@ -7,7 +7,7 @@ import { place_a_boat } from "../../functions/setup";
 const Board = () => {
 	const { state: gamestate } = useContext(GameContext)
   const { state: playerstate } = useContext(PlayersContext);
-	const { state: setupstate } = useContext(SetupContext)
+	const { state: setupstate, dispatch: setupdispatch } = useContext(SetupContext)
 	
   const [activeCell, setActiveCell] = useState({row: null, col: null});
 	const [isHorizontal, setIsHorizontal] = useState(true)
@@ -15,6 +15,7 @@ const Board = () => {
   const column_label_letters = Array.from("💥ABCDEFGHIJ");
   const currentBoat = setupstate.currentBoat;
 
+	
   const gridClickHandler = ({ row, col }) => {
     console.log(`gridClickHandler`, row, col, " activeCell: ", activeCell);
 
@@ -24,11 +25,12 @@ const Board = () => {
       setActiveCell({row, col});
     }
 		
-		place_a_boat({activeCell: {row, col}, isHorizontal})
+		place_a_boat({activeCell: {row, col}, isHorizontal, dispatch: setupdispatch})
 		
 		// console.log("currentBoat (Board)", currentBoat)
 		// console.log("placeBoatHighlightColor", setupstate.placeBoatHighlightColor)
   };
+	
 
   return (
     <BoardContainer>
@@ -46,6 +48,7 @@ const Board = () => {
     </BoardContainer>
   );
 };
+
 
 const Cell = ({ row, col, content, activeCell, gridClickHandler }) => {
   const { state: setupstate, dispatch: setupdispatch } = useContext(SetupContext);
