@@ -19,7 +19,7 @@ const Board = () => {
   const gridClickHandler = ({ row, col }) => {
     console.log(`gridClickHandler`, row, col, " activeCell: ", activeCell);
 
-    if (activeCell && row == activeCell.row && col == activeCell.col) {
+    if (activeCell && row === activeCell.row && col === activeCell.col) {
       setActiveCell({row: null, col: null});
     } else {
       setActiveCell({row, col});
@@ -54,7 +54,7 @@ const Cell = ({ row, col, content, activeCell, gridClickHandler }) => {
   const { state: setupstate, dispatch: setupdispatch } = useContext(SetupContext);
   const [clicked, setClicked] = useState(false);
 	
-	const match = activeCell && row == activeCell.row && col == activeCell.col;
+	const match = activeCell && row === activeCell.row && col === activeCell.col;
 	
   return (
     <Box
