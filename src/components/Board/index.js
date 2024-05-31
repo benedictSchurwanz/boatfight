@@ -25,7 +25,7 @@ const Board = () => {
       setActiveCell({row, col});
     }
 		
-		place_a_boat({activeCell: {row, col}, isHorizontal, dispatch: setupdispatch})
+		place_a_boat({activeCell: {row, col}, length: 5, isHorizontal, dispatch: setupdispatch})
 		
 		// console.log("currentBoat (Board)", currentBoat)
 		// console.log("placeBoatHighlightColor", setupstate.placeBoatHighlightColor)

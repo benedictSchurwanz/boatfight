@@ -18,13 +18,14 @@ export const useGameSetup = ({ gamestate, playerstate, setupdispatch }) => {
   });
 };
 
-export const place_a_boat = ({ activeCell, isHorizontal, dispatch }) => {
+export const place_a_boat = ({ activeCell, length, isHorizontal, dispatch }) => {
   const row = activeCell.row;
   const col = activeCell.col;
 
   console.log("row", row, "col", col, "isHorizontal", isHorizontal);
 
   let coordinate;
+	
   isHorizontal
     ? (coordinate = col) // for horizontal boats, we count columns
     : (coordinate = row);
@@ -33,7 +34,7 @@ export const place_a_boat = ({ activeCell, isHorizontal, dispatch }) => {
 
   console.log(coordinate)
 	
-	coordinate + 5 <= 10
+	coordinate + length <= 10
     ? (legal = true)
     : (legal = false);
 
