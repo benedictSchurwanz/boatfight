@@ -3,7 +3,7 @@
 
 import {
   PLACE_BOATS_START,
-  PLACE_BOAT_ILLEGAL,
+  PLACE_BOAT_NOT_LEGAL,
   PLACE_BOAT_LEGAL,
   GAME_SETUP_START,
 } from "../state/constants";
@@ -39,7 +39,7 @@ export const place_a_boat = ({ activeCell, isHorizontal, dispatch }) => {
 
   legal
     ? dispatch({ type: PLACE_BOAT_LEGAL })
-    : dispatch({ type: PLACE_BOAT_ILLEGAL });
+    : dispatch({ type: PLACE_BOAT_NOT_LEGAL });
 };
 
 export const check_available_space = ({

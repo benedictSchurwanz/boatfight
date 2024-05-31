@@ -1,6 +1,6 @@
 import {
   PLACE_BOATS_START,
-  PLACE_BOAT_ILLEGAL,
+  PLACE_BOAT_NOT_LEGAL,
   PLACE_BOAT_LEGAL,
   GAME_SETUP_START,
 	PLACE_BOAT_ORIENTATION_FLIP,
@@ -56,7 +56,7 @@ export const setupReducer = (state, action) => {
         placeBoatHighlightColor: "green",
       };
     }
-    case PLACE_BOAT_ILLEGAL: {
+    case PLACE_BOAT_NOT_LEGAL: {
       return {
         ...state,
         placeBoatHighlightColor: "red",
